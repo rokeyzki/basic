@@ -4,5 +4,5 @@ var s = new Set();
 
 for (let i of s) {
   alert(i);
-  console.log(i);
+  // console.log(i);
 }
