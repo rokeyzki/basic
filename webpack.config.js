@@ -1,12 +1,14 @@
 module.exports = {
   entry: {
-    index: './entry/index.entry.js',
-    // other: './components/other.entry.js'
+    'one/index': './src/module/es6/entry',
+    'one/two/other': './src/module/test/entry'
   },
+
   output: {
     path: './build',
     filename: 'script/[name].min.js'
   },
+
   externals: {
     // 'react': 'React',
     // 'react-dom': 'ReactDOM',
@@ -14,6 +16,7 @@ module.exports = {
     // 'echarts': true,
     // 'g2': 'G2'
   },
+
   module: {
     // preLoaders: [
     //   {
