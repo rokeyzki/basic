@@ -11,10 +11,13 @@
     "babel-loader": "^6.2.5",
     "babel-preset-es2015": "^6.16.0",
     "eslint": "^3.7.1",
+    "eslint-plugin-react": "^6.3.0",
     "webpack": "^1.13.2"
   },
   "scripts": {
-    "test": "test"
+    "build": "./node_modules/.bin/webpack -p",
+    "dev": "./node_modules/.bin/webpack",
+    "test": "./node_modules/.bin/eslint ./src"
   },
   "keywords": [
     "demo"
