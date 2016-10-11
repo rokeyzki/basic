@@ -25,11 +25,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|build)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015'],
-          // plugins: ['antd']
-        }
+        loader: 'babel-loader'
+        // ,query: {
+        //   presets: ['es2015', 'stage-0'],
+        //   // plugins: ['antd']
+        // }
       }
 
       ,{
