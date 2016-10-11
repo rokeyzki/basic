@@ -1,18 +1,18 @@
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
     'one/index': './src/module/es6/entry',
-    'one/two/other': './src/module/vue/entry'
+    'one/two/other': './src/module/vue/entry',
   },
 
   output: {
     path: './build',
-    filename: 'script/[name].min.js'
+    filename: 'script/[name].min.js',
   },
 
   externals: {
-    'vue': 'Vue',
+    vue: 'Vue',
     // 'react': 'React',
     // 'react-dom': 'ReactDOM',
     // 'react-router': 'ReactRouter',
@@ -25,22 +25,22 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /(node_modules|build)/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
         // ,query: {
         //   presets: ['es2015', 'stage-0'],
         //   // plugins: ['antd']
         // }
-      }
+      },
 
-      ,{
+      {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?{browsers:["last 2 versions", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"]}')
-      }
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?{browsers:["last 2 versions", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"]}'),
+      },
 
-      ,{
+      {
         test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?{browsers:["last 2 versions", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"]}!less-loader')
-      }
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?{browsers:["last 2 versions", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"]}!less-loader'),
+      },
 
       // ,{
       //   test: /\.(jpe?g|png|gif|svg)$/i,
