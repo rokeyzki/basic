@@ -1,1 +1,1 @@
-require('./demo.js');
+require('./function/restArguments.js');
