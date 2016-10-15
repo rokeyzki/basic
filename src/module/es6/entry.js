@@ -1,1 +1,1 @@
-require('./function/restArguments.js');
+require('./function/bind.js');
