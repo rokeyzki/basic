@@ -2,8 +2,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    'one/index': './src/module/es6/entry',
-    'one/two/other': './src/module/vue/entry',
+    'es6/index': './src/module/es6/entry',
+    'design/foo1': './src/module/design/foo1/entry',
   },
 
   output: {
@@ -12,7 +12,6 @@ module.exports = {
   },
 
   externals: {
-    vue: 'Vue',
     // 'react': 'React',
     // 'react-dom': 'ReactDOM',
     // 'react-router': 'ReactRouter',
