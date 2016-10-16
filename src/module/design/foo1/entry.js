@@ -1,3 +1,1 @@
-import './autoprefixer.css';
-
-console.log(1);
+import './demo';
