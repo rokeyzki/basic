@@ -4,8 +4,9 @@
   "description": "demo",
   "main": "webpack.config.js",
   "dependencies": {
-    "webpack": "^1.13.2",
-    "extract-text-webpack-plugin": "^1.0.1"
+    "babel-polyfill": "^6.16.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "webpack": "^1.13.2"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",

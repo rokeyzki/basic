@@ -1,5 +1,5 @@
 // 函数绑定运算符"::" 是 es7 的方案 
-const add = function (x,y) {
+const foo = function (x, y) {
     return x*this.m + y*this.n;
 };
 
@@ -9,7 +9,7 @@ const obj = {
 };
 
 // var newAdd = add.bind(obj, 3); // 即设置x=3
-const newAdd = obj::add;
+const newAdd = obj::foo;
 
 console.dir(newAdd(3, 4));
 
