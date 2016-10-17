@@ -3,7 +3,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
     'es6/index': './src/module/es6/entry',
-    'design/foo1': './src/module/design/foo1/entry',
+    'design/d1': './src/module/design/d1/entry',
+    'api/a1': './src/module/api/a1/entry',
+    'api/a2': './src/module/api/a2/entry',
   },
 
   output: {
