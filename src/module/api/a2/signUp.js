@@ -1,7 +1,8 @@
 import AV from '../leancloud/config';
 
-let currentUser = AV.User.current();
+const currentUser = AV.User.current();
 console.log(currentUser);
+if (currentUser) console.info(`当前已登录用户：${currentUser.get('username')}`);
 
 const username = document.querySelector('#username');
 const password = document.querySelector('#password');
@@ -20,6 +21,8 @@ button.addEventListener('click', () => {
     user.setEmail(email.value);
     user.signUp().then((loginedUser) => {
       console.dir(loginedUser);
+      alert(`注册成功，注册用户：${loginedUser.get('username')}`);
+      username.value = password.value = email.value = null;
     }, (error) => {
       console.error(error);
       alert('注册失败，服务端异常');
@@ -27,14 +30,4 @@ button.addEventListener('click', () => {
   } else {
     alert('注册信息不完整');
   }
-}, false);
-
-const buttonOut = document.querySelector('#buttonOut');
-buttonOut.addEventListener('click', () => {
-  AV.User.logOut();
-
-  currentUser = AV.User.current();
-  console.log(currentUser);
-
-  alert('退出成功');
 }, false);

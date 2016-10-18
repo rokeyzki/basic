@@ -6,6 +6,7 @@ module.exports = {
     'design/d1': './src/module/design/d1/entry',
     'api/a1': './src/module/api/a1/entry',
     'api/a2': './src/module/api/a2/entry',
+    'api/a3': './src/module/api/a3/entry',
   },
 
   output: {
