@@ -1,3 +1,5 @@
+// module: file
+
 import theB from './b';
 
 console.log(theB.year);

@@ -1,3 +1,5 @@
+// function: async
+
 function foo(info, ms) {
   console.log(`步骤${info}：start`);
 
