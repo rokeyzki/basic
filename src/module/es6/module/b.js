@@ -1,10 +1,10 @@
-import { name as aName, sex, year } from './a';
+import { name as myName, year } from './a';
 
 const moduleB = {
-  name: aName,
+  name: myName,
   year,
   getInfo() {
-    return `${aName}: ${sex} ${year}`;
+    return `${myName}: ${year}`;
   },
 };
 
