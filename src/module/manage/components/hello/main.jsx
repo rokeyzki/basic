@@ -1,6 +1,8 @@
 import React from 'react';
 import { Cascader } from 'antd';
 
+import Test from './carousel';
+
 const options = [{
   value: 'zhejiang',
   label: 'Zhejiang',
@@ -33,7 +35,10 @@ function onChange(value) {
 const Hello = React.createClass({
   render: () => {
     return (
-      <Cascader options={options} onChange={onChange} />
+      <div>
+        <Test />
+        <Cascader options={options} onChange={onChange} />
+      </div>
     );
   },
 });
