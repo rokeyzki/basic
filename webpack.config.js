@@ -3,10 +3,11 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
     'es6/index': './src/module/es6/entry',
-    'design/d1': './src/module/design/d1/entry',
     'api/a1': './src/module/api/a1/entry',
     'api/a2': './src/module/api/a2/entry',
     'api/a3': './src/module/api/a3/entry',
+    'design/d1': './src/module/design/d1/entry',
+    'manage/hello': './src/module/manage/entry.js',
   },
 
   output: {
@@ -14,9 +15,13 @@ module.exports = {
     filename: 'script/[name].min.js',
   },
 
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
+
   externals: {
-    // 'react': 'React',
-    // 'react-dom': 'ReactDOM',
+    'react': 'React',
+    'react-dom': 'ReactDOM',
     // 'react-router': 'ReactRouter',
     // 'echarts': true,
     // 'g2': 'G2'
@@ -28,10 +33,12 @@ module.exports = {
         test: /\.js$/,
         exclude: /(node_modules|build)/,
         loader: 'babel-loader',
-        // ,query: {
-        //   presets: ['es2015', 'stage-0'],
-        //   // plugins: ['antd']
-        // }
+      },
+
+      {
+        test: /\.jsx$/,
+        exclude: /(node_modules|build)/,
+        loader: 'babel-loader',
       },
 
       {
