@@ -11,7 +11,7 @@ module.exports = {
   },
 
   output: {
-    path: './build',
+    path: './dist',
     filename: 'script/[name].min.js',
   },
 
@@ -31,13 +31,13 @@ module.exports = {
     loaders: [
       {
         test: /\.js$/,
-        exclude: /(node_modules|build)/,
+        exclude: /(node_modules|dist)/,
         loader: 'babel-loader',
       },
 
       {
         test: /\.jsx$/,
-        exclude: /(node_modules|build)/,
+        exclude: /(node_modules|dist)/,
         loader: 'babel-loader',
       },
 
