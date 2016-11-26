@@ -3,5 +3,11 @@
     "files.autoSave": "afterDelay",
     "files.associations": {"*.wxss":"css","*.wxml":"html"},
     "editor.tabSize": 2,
-    "files.eol": "\n"
+    "files.eol": "\n",
+    "files.exclude": {
+        "**/.git": false,
+        "**/.svn": false,
+        "**/.hg": true,
+        "**/.DS_Store": true
+    }
 }
