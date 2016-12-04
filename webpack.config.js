@@ -23,8 +23,8 @@ module.exports = {
     react: 'React',
     'react-dom': 'ReactDOM',
     // 'react-router': 'ReactRouter',
-    // 'echarts': true,
-    // 'g2': 'G2'
+    // echarts: true,
+    // g2: 'G2',
   },
 
   module: {
