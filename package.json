@@ -4,7 +4,7 @@
   "description": "demo",
   "main": "webpack.config.js",
   "dependencies": {
-    "antd": "^2.5.0",
+    "antd": "^2.5.1",
     "babel-polyfill": "^6.16.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "leancloud-storage": "^1.5.0",
