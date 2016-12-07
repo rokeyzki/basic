@@ -1,3 +1,1 @@
-// import './app';
-
-import './state';
+import './app';

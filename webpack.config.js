@@ -8,6 +8,7 @@ module.exports = {
     'api/a3': './src/module/api/a3/entry',
     'design/d1': './src/module/design/d1/entry',
     'manage/hello': './src/module/manage/entry.js',
+    'state/s1': './src/module/state/entry.js',
   },
 
   output: {

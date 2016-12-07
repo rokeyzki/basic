@@ -13,6 +13,9 @@
 * manage：后台制作的相关Demo（核心：React，推荐：antD）
     * 工程
     * 组件
+* state：状态的相关Demo（核心：Redux，推荐：redux-promise）
+    * 同步
+    * 异步
 * nodejs: 工具制作的相关Demo（核心：Node.js） 
     * cmd工具
     * npm模块
