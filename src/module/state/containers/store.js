@@ -1,3 +1,6 @@
+// store
+// 一个页面只会有一个store
+
 import { createStore } from 'redux';
 
 import R1 from './reducers/r1';

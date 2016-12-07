@@ -1,3 +1,6 @@
+// actions
+// 负责数据的读写存放
+
 const A1 = {
   change(v) {
     return {

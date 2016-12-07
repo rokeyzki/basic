@@ -1,3 +1,5 @@
+// 模拟视图层中的使用
+
 import Store from './containers/store';
 
 import A1 from './containers/actions/a1';
