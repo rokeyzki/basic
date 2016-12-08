@@ -4,7 +4,7 @@
 const A1 = {
   change(v) {
     return {
-      type: 'Change_Data',
+      type: 'CHANGE_DATA',
       value: v * 2,
     };
   },

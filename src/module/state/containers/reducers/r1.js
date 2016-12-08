@@ -3,7 +3,12 @@
 
 const R1 = (state, action) => {
   switch (action.type) {
-    case 'Change_Data':
+    case 'CHANGE_DATA':
+      return Object.assign({}, state, {
+        data: action.value,
+      });
+
+    case 'ASYNC_DATA':
       return Object.assign({}, state, {
         data: action.value,
       });
