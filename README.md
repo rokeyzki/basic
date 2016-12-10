@@ -7,7 +7,7 @@
 * api：后端的相关Demo（核心：RESTful API，推荐：LeanCloud）
     * 权限
     * 数据
-* design：前台制作的相关Demo（核心：DOM，推荐：jQuery）
+* design：前台制作的相关Demo（核心：DOM，推荐：jQuery 1.12、Underscore 1.7）
     * 布局
     * 特效
 * manage：后台制作的相关Demo（核心：React，推荐：antD）
