@@ -1,4 +1,5 @@
 import './autoprefixer.css';
+import './test.scss';
 
 const showWidth = $(window).width();
 const showHeight = $(window).height();

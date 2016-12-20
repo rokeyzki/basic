@@ -30,6 +30,8 @@
     "eslint-plugin-react": "^6.4.1",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "node-sass": "^4.1.0",
+    "sass-loader": "^4.1.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
   },

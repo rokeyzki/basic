@@ -53,6 +53,11 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?{browsers:["last 2 versions", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"]}!less-loader'),
       },
 
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader?{browsers:["last 2 versions", "safari 5", "ie 8", "ie 9", "opera 12.1", "ios 6", "android 4"]}!sass-loader'),
+      },
+
       // ,{
       //   test: /\.(jpe?g|png|gif|svg)$/i,
       //   loaders: [
