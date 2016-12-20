@@ -1,0 +1,8 @@
+$nav-color: #F90;
+$bg: #e6e6e6;
+#test {
+  $width: 100px;
+  width: $width;
+  color: $nav-color;
+  background-color: $bg;
+}
