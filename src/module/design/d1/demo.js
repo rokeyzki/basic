@@ -1,4 +1,4 @@
-import './autoprefixer.css';
+import './postcss.css';
 import './test.scss';
 
 const showWidth = $(window).width();

@@ -45,17 +45,12 @@ module.exports = {
 
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader'),
-      },
-
-      {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader!less-loader'),
+        loader: ExtractTextPlugin.extract('style', 'css!postcss'),
       },
 
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader!autoprefixer-loader!sass-loader'),
+        loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
       },
 
       // ,{
