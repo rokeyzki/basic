@@ -17,5 +17,5 @@
     * 同步
     * 异步
 * nodejs: 工具制作的相关Demo（核心：Node.js） 
-    * cmd工具
-    * npm模块
+    * cli 命令行工具
+    * npm 模块包管理
