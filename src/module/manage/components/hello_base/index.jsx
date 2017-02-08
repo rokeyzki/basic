@@ -6,6 +6,8 @@ export default class HelloBase extends React.Component {
   constructor(props) {
     super(props); // 获取外部调用本组件时传入的属性
     console.dir(this.props);
+    console.log(this.props.prop1);
+    console.log(this.props.prop2);
 
     this.state = { // 设置组件初始状态
       key1: 'value1',
@@ -53,7 +55,7 @@ export default class HelloBase extends React.Component {
 
     // JSX
     return (
-      <div>
+      <div className="helloBase">
         <div>
           <p style={style}>hello react</p>
         </div>
@@ -105,3 +107,15 @@ export default class HelloBase extends React.Component {
   }
 
 }
+
+// 属性验证
+HelloBase.propTypes = { // 如果是引用压缩的react.min.js文件，则不包含属性验证功能
+  prop1: React.PropTypes.number.isRequired,
+  prop2: React.PropTypes.string,
+};
+
+// 属性默认值
+HelloBase.defaultProps = {
+  prop1: 0,
+  prop2: 'I am prop2',
+};

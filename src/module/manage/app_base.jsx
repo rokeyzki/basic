@@ -4,6 +4,6 @@ import ReactDOM from 'react-dom';
 import HelloBase from './components/hello_base';
 
 ReactDOM.render(
-  <HelloBase prop1="hello 1" prop2="world 2" />,
+  <HelloBase prop1={123} />,
   document.querySelector('#app')
 );
