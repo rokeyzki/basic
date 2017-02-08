@@ -1,11 +1,17 @@
 import React from 'react';
 
+import './style.css';
+
 export default class HelloBase extends React.Component {
   constructor(props) {
-    super(props);
-    // this.state = {
-    //   example: 'example',
-    // };
+    super(props); // 获取外部调用本组件时传入的属性
+    console.dir(this.props);
+
+    this.state = { // 设置组件初始状态
+      key1: 'value1',
+      key2: 'value2',
+    };
+
     this.handleClick = this.handleClick.bind(this); // 事件处理绑定上下文
   }
 
@@ -25,10 +31,15 @@ export default class HelloBase extends React.Component {
   // 事件处理
   handleClick() {
     console.clear();
+
     console.dir(this); // 获取上下文
+    console.dir(this.props); // 获取组件属性
+    console.dir(this.state); // 获取组件状态
+
     console.log(this.one.value);
     console.log(this.two1.checked, this.two2.checked, this.two3.checked);
     console.log(this.three.value);
+
     console.log('button 点击事件触发');
   }
 
@@ -43,11 +54,15 @@ export default class HelloBase extends React.Component {
     // JSX
     return (
       <div>
-        <p style={style}>hello react</p>
+        <div>
+          <p style={style}>hello react</p>
+        </div>
+
         <div>
           {/* 文本输入框：不要使用value属性设置文本输入框元素的初值，应当使用defaultValue */}
           <input type="text" ref={(ref) => { this.one = ref; }} defaultValue="demo" />
         </div>
+
         <div>
           {/* 多选框：不要使用checked属性设置复选按钮的初始选中状态，应当使用defaultChecked */}
           <input
@@ -72,6 +87,7 @@ export default class HelloBase extends React.Component {
             value="3"
           /> 三选项
         </div>
+
         <div>
           {/* 单选框：不要使用option元素的selected属性设置单选按钮组的初始选中状态，应当使用 select元素的defaultValue */}
           <select defaultValue="B" ref={(ref) => { this.three = ref; }}>
@@ -80,6 +96,7 @@ export default class HelloBase extends React.Component {
             <option value="C">Korea</option>
           </select>
         </div>
+
         <div>
           <input type="button" defaultValue="test button" onClick={this.handleClick} />
         </div>
