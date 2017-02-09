@@ -17,7 +17,7 @@ const reducer = (state, action) => { // reducer：负责状态的最终更新
   }
 };
 
-// initial 初始状态
+// initial 初始状态（数据结构骨架）
 const initialState = {
   foo: 'hello rudex',
   data: 2,

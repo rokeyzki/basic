@@ -1,6 +1,8 @@
 // action async
 // 负责数据的处理
 
+// import AV from '../leancloud/config';
+
 const action = {
   async group() {
     console.log('async start');
@@ -25,6 +27,7 @@ const action = {
   },
   step(x) {
     return new Promise((resolve, reject) => {
+      // 模拟接口请求示例
       function handler(value) {
         if (value >= 5) resolve(value);
         else reject(value);
@@ -32,6 +35,19 @@ const action = {
       setInterval(() => {
         handler(+x);
       }, 3000);
+
+      // 后端接口请求示例
+      // const TestObject = AV.Object.extend('TestObject');
+      // const testObject = new TestObject();
+      // testObject.save({
+      //   words: 'Hello World!',
+      // }).then((object) => {
+      //   console.dir(object);
+      //   resolve(object);
+      // }).catch((error) => {
+      //   console.error(`catch: ${error}`);
+      //   reject(error);
+      // });
     });
   },
 };
