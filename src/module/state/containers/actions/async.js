@@ -20,7 +20,7 @@ const action = {
 
     return {
       type: 'UPDATE_DATA',
-      value: 321,
+      value: 888,
     };
   },
   step(x) {
