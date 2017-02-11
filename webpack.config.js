@@ -24,7 +24,7 @@ module.exports = {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    // 'react-router': 'ReactRouter',
+    'react-router': 'ReactRouter',
     // echarts: true,
     // g2: 'G2',
   },
