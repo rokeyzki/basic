@@ -26,6 +26,10 @@ class PageFoo extends React.Component {
   }
 }
 
+PageFoo.propTypes = {
+  children: React.PropTypes.element,
+};
+
 class PartA extends React.Component {
   render() {
     return (
@@ -41,6 +45,10 @@ class PartB extends React.Component {
     );
   }
 }
+
+PartB.propTypes = {
+  params: React.PropTypes.objectOf(React.PropTypes.string),
+};
 
 class PartC extends React.Component {
   render() {
@@ -63,6 +71,10 @@ class PartC extends React.Component {
   }
 }
 
+PartC.propTypes = {
+  children: React.PropTypes.element,
+};
+
 class PartX extends React.Component {
   render() {
     return (
@@ -70,6 +82,10 @@ class PartX extends React.Component {
     );
   }
 }
+
+PartX.propTypes = {
+  params: React.PropTypes.objectOf(React.PropTypes.string),
+};
 
 class NoMatch extends React.Component {
   render() {
