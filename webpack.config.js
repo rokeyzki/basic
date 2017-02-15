@@ -3,13 +3,16 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
   entry: {
     'es6/index': './src/module/es6/entry',
+
     'api/hello': './src/module/api/hello/entry',
     'api/user/signup': './src/module/api/user/signup/entry',
     'api/user/login': './src/module/api/user/login/entry',
     'api/file': './src/module/api/file/entry',
-    'design/d1': './src/module/design/d1/entry',
-    'manage/hello': './src/module/manage/entry',
-    'state/demo': './src/module/state/entry',
+
+    'jquery/d1': './src/module/jquery/d1/entry',
+
+    'react/hello': './src/module/react/entry',
+    'redux/demo': './src/module/redux/entry',
   },
 
   output: {

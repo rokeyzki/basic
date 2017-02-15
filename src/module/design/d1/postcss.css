@@ -1,5 +1,0 @@
-#foo {
-  background-color: #999;
-  transition :transform 1s; /* autoprefixer 测试 */
-  clear: fix; /* cssgrace 测试 */
-}
