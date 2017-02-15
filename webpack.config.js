@@ -56,16 +56,17 @@ module.exports = {
         loader: ExtractTextPlugin.extract('style', 'css!postcss!sass'),
       },
 
+      {
+        test: /\.json$/,
+        loader: 'json-loader',
+      },
+
       // ,{
       //   test: /\.(jpe?g|png|gif|svg)$/i,
       //   loaders: [
       //     'url-loader?hash=sha512&limit=10000&name=img/[hash].[ext]',
       //     'img?minimize'
       //   ]
-      // }
-      // ,{
-      //   test: /\.json$/,
-      //   loader: 'json-loader'
       // }
     ],
 

@@ -1,6 +1,10 @@
 import './postcss.css';
 // import './test.scss'; // node-sass：64位win7系统下，node版本不能大于4.0
 
+import fooJson from './foo.json';
+
+console.dir(fooJson);
+
 const showWidth = $(window).width();
 const showHeight = $(window).height();
 console.log(`当前窗口可视宽度为：${showWidth} px`);
