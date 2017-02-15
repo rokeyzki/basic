@@ -21,5 +21,7 @@
     * npm 模块包管理
 
 ## TODO
-* vue
-* vuex
+* 算法：blog 整理
+* 设计模式：极客学院视频教程
+* js 基础：blog 整理
+* css 布局：blog 整理
