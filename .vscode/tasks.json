@@ -1,0 +1,71 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "0.1.0",
+  "tasks": [
+    {
+      "taskName": "workspaceRoot",
+      "command": "echo",
+      "args": ["${workspaceRoot}"], // 当前项目的根目录的完整路径
+      "isShellCommand": true
+    },
+    {
+      "taskName": "fileBasename",
+      "command": "echo",
+      "args": ["${fileBasename}"], // 当前文件的完整名称
+      "isShellCommand": true
+    },
+    {
+      "taskName": "fileBasenameNoExtension",
+      "command": "echo",
+      "args": ["${fileBasenameNoExtension}"], // 当前文件的无后缀名称
+      "isShellCommand": true
+    },
+    {
+      "taskName": "fileExtname",
+      "command": "echo",
+      "args": ["${fileExtname}"], // 当前文件的后缀
+      "isShellCommand": true
+    },
+    {
+      "taskName": "relativeFile",
+      "command": "echo",
+      "args": ["${relativeFile}"], // 当前文件的相对路径
+      "isShellCommand": true
+    },
+    {
+      "taskName": "file",
+      "command": "echo",
+      "args": ["${file}"], // 当前文件的完整路径
+      "isShellCommand": true
+    },
+    {
+      "taskName": "fileDirname",
+      "command": "echo",
+      "args": ["${fileDirname}"], // 当前文件夹的完整路径
+      "isShellCommand": true
+    },
+    {
+      "taskName": "cwd",
+      "command": "echo",
+      "args": ["${cwd}"], // 当前命令的所在执行目录
+      "isShellCommand": true
+    },
+    {
+      "taskName": "runDev",
+      "command": "npm",
+      "args": ["run", "dev"], // npm 命令
+      "isShellCommand": true
+    }
+  ]
+}
+
+// 快捷键绑定方式说明
+// 将键绑定放入 keybindings.json 文件中以覆盖默认值
+// [
+//   {
+//     "key": "ctrl+0",
+//     "command": "workbench.action.tasks.runTask",
+//     "args": "fileBasename"
+//   }
+// ]
