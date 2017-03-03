@@ -53,8 +53,8 @@
     },
     {
       "taskName": "runDev",
-      "command": "npm",
-      "args": ["run", "dev"], // npm 命令
+      "command": "npm", // 这里可以放相关命令，如：scss、serve 等
+      "args": ["run", "dev"], // 参数，可以为空数组
       "isShellCommand": true
     }
   ]
