@@ -69,13 +69,6 @@ module.exports = {
       //   ]
       // }
     ],
-
-    postLoaders: [ // 为了兼容IE8
-      // {
-      //   test: /\.js$/,
-      //   loaders: ['es3ify-loader'], // sudo npm install es3ify-loader
-      // },
-    ],
   },
 
   plugins: [
