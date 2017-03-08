@@ -1,5 +1,5 @@
 import './postcss.css';
-// import './test.scss'; // node-sass：64位win7系统下，node版本不能大于4.0
+import './test.scss';
 
 import fooJson from './foo.json';
 
