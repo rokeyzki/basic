@@ -9,7 +9,7 @@ module.exports = {
     'api/user/login': './src/module/api/user/login/entry',
     'api/file': './src/module/api/file/entry',
 
-    'jquery/d1': './src/module/jquery/d1/entry',
+    'jquery/base': './src/module/jquery/base/entry',
 
     'react/hello': './src/module/react/entry',
     'redux/demo': './src/module/redux/entry',

@@ -7,6 +7,9 @@
 * api：后端的相关Demo（核心：RESTful API，推荐：LeanCloud）
     * 权限
     * 数据
+* d3: 数据可视化的相关Demo
+    * SVG
+    * GIS
 * jquery：前台制作的相关Demo（核心：IE8，推荐：jQuery 1.12）
     * 布局
     * 特效
