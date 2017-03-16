@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css';
 
-export default class HelloBase extends React.Component {
+export default class HelloBase extends React.Component { // TODO: 待整理React.PureComponent
   constructor(props) {
     console.log('初次载入组件时才会执行构造函数');
     super(props); // 获取外部调用本组件时传入的属性(props)
