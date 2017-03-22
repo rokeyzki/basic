@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+  width="400" height="400">
+  
+  <path d="M100,50,l50,50,h100,v-50" stroke="red" fill="none"/>
+
+  <path d="M100,150,l50,50,h100,v-50,z" stroke="red" fill="none"/>
+
+  <path d="M100,250,c100,10,200,20,30,30" stroke="red" fill="none"/>
+
+</svg>
