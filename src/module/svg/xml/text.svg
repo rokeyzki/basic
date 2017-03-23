@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="400" height="400">
+  
+  <path d="M0,100h100" stroke="red"/>
+
+  <text x="0" y="100" style="font-size:20px;"
+    dx="10 10 10" dy="10 10 10 10 10 10 10 10 10 10">ABCDEFGHIJKLMN</text>
+
+  <a xlink:href="http://baidu.com"
+    xlink:title="超链接"
+    target="_blank">
+    <text x="100" y="300" style="font-size:30px; font-weight:600"
+      fill="yellow" stroke="red">Hello World</text>
+  </a>
+  
+</svg>
