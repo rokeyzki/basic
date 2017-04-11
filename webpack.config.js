@@ -17,7 +17,7 @@ module.exports = {
 
   output: {
     path: './dist',
-    filename: 'script/[name].min.js',
+    filename: 'js/[name].min.js',
   },
 
   resolve: {
@@ -72,9 +72,9 @@ module.exports = {
   },
 
   plugins: [
-    new ExtractTextPlugin('style/[name].min.css'),
+    new ExtractTextPlugin('css/[name].min.css'),
     // new BannerPlugin('This file is created by Charles Lim'),
-    // new CommonsChunkPlugin('script/common.min.js'),
+    // new CommonsChunkPlugin('js/common.min.js'),
     // new UglifyJsPlugin({compress:{warnings: false}})
   ],
 
