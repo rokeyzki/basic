@@ -38,8 +38,8 @@
     "webpack": "^1.13.2"
   },
   "scripts": {
-    "build": "./node_modules/.bin/webpack -p",
-    "dev": "./node_modules/.bin/webpack",
+    "build": "./node_modules/.bin/webpack --config ./webpack/build.config.js -p",
+    "dev": "./node_modules/.bin/webpack --config ./webpack/dev.config.js",
     "test": "./node_modules/.bin/eslint ./src"
   },
   "keywords": [
