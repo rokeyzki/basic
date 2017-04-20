@@ -1,5 +1,4 @@
-// action sync
-// 负责数据的处理
+// Action Sync 负责对不依赖后端数据的处理
 
 const action = {
   change(v) {

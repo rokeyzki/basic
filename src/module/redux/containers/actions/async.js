@@ -1,5 +1,4 @@
-// action async
-// 负责数据的处理
+// Action Async 负责对依赖后端数据的处理
 
 // import AV from '../leancloud/config';
 

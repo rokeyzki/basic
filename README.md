@@ -10,13 +10,13 @@
 * jquery：前台制作的相关Demo（核心：IE8，推荐：jQuery 1.12）
     * 布局
     * 特效
-* react：后台制作的相关Demo（核心：React，推荐：redux-router、antD）
+* react：后台制作的相关Demo（核心：React，推荐：redux-router、Ant Design、Ant Motion）
     * 工程
     * 组件
-* redux：状态的相关Demo（核心：Redux，推荐：redux-promise）
+* redux：状态的相关Demo（核心：Redux，推荐：redux-promise、Immutable.js）
     * 同步
     * 异步
-* svg: 数据可视化的相关Demo（核心：SVG，推荐：d3）
+* svg: 数据可视化的相关Demo（核心：SVG，推荐：D3.js）
     * 报表
     * 地图
 
