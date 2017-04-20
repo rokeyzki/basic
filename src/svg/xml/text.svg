@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" 
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="400" height="800">
+  
+  <path d="M0,100h100" stroke="red"/>
+
+  <text x="0" y="100" style="font-size:20px;"
+    dx="10 10 10" dy="10 10 10 10 10 10 10 10 10 10">ABCDEFGHIJKLMN</text>
+
+  <a xlink:href="http://baidu.com"
+    xlink:title="超链接"
+    target="_blank">
+    <text x="100" y="300" style="font-size:30px; font-weight:600"
+      fill="yellow" stroke="red">Hello World</text>
+  </a>
+
+  <path id="path1" 
+    d="M 100 200 Q 200 100 300 200 T 500 200" 
+    stroke="red" 
+    fill="none"
+    transform="translate(0 200)" />
+
+  <text style="font-size:24px;"
+    text-anchor="middle"
+    dx="10" dy="0 0 0 0 0 0 0 0 20">
+    <textPath xlink:href="#path1">
+      这个文字先上去，又下来了。
+    </textPath>
+  </text>
+</svg>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div>hello world</div>
+
+  <script src="./ajaxhook.js"></script>
+  <script>
+    document.onreadystatechange = function(){
+      if(this.readyState == "complete"){
+        
+        hookAjax({
+          send:function(arg, xhr){
+            console.log("send called: %O", arg[0])
+            xhr.setRequestHeader("_custom_header_","ajaxhook")
+          },
+          onreadystatechange:function(xhr){
+            console.log("onreadystatechange called: %O" ,xhr)
+            //return true
+          }
+        });
+
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "get?test=123", true);
+        xhr.send();
+        xhr.onreadystatechange = function(){
+          if(this.readyState == 4){
+            if(this.status == 200){
+              console.log(JSON.parse(this.responseText));
+            }else{
+              console.log("error: " + this.status);
+            }
+          }
+        };
+
+      }
+    };
+  </script>
+</body>
+</html>

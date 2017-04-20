@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="400" height="400">
+
+  <defs>
+    <clipPath id="test">
+      <polygon
+        points="0 140 190 160 0 200"
+        stroke="yellow"
+        fill="yellow">
+      </polygon>
+    </clipPath>
+  </defs>
+
+  <ellipse
+    cx="200"
+    cy="160"
+    rx="170"
+    ry="80"
+    stroke="red"
+    fill="red"
+    clip-path="url(#test)">
+  </ellipse>
+
+  
+</svg>
