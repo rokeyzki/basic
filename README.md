@@ -19,9 +19,6 @@
 * svg: 数据可视化的相关Demo（核心：SVG，推荐：d3）
     * 报表
     * 地图
-* nodejs: 工具制作的相关Demo（核心：Node.js） 
-    * cli 命令行工具
-    * npm 模块包管理
 
 ## TODO
 * 单元测试：mocha
