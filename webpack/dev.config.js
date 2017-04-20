@@ -2,17 +2,17 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: {
-    'es6/index': './src/module/es6/entry',
+    'es6/index': './src/es6/entry',
 
-    'api/hello': './src/module/api/hello/entry',
-    'api/user/signup': './src/module/api/user/signup/entry',
-    'api/user/login': './src/module/api/user/login/entry',
-    'api/file': './src/module/api/file/entry',
+    'api/hello': './src/api/hello/entry',
+    'api/user/signup': './src/api/user/signup/entry',
+    'api/user/login': './src/api/user/login/entry',
+    'api/file': './src/api/file/entry',
 
-    'jquery/base': './src/module/jquery/base/entry',
+    'jquery/base': './src/jquery/base/entry',
 
-    'react/hello': './src/module/react/entry',
-    'redux/demo': './src/module/redux/entry',
+    'react/hello': './src/react/entry',
+    'redux/demo': './src/redux/entry',
   },
 
   output: {
