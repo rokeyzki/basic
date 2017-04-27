@@ -12,7 +12,7 @@
 const arrA = ['red', 'green', 'blue'];
 
 for (const v of arrA) {
-  console.log(v); // red green blue
+  console.log(v); // red、green、blue
 }
 
 // DEMO 2
@@ -20,7 +20,7 @@ for (const v of arrA) {
 const setA = new Set(['red', 'green', 'blue']);
 
 for (const v of setA) {
-  console.log(v); // red green blue
+  console.log(v); // red、green、blue
 }
 
 // DEMO 3
@@ -64,3 +64,19 @@ console.dir(foo); // {value: 'blue', done: false}
 
 foo = iterator.next();
 console.dir(foo); // {value: undefined, done: true}
+
+// DEMO 6
+
+const arrC = ['red', 'green', 'blue'];
+
+for (const p of arrC.entries()) {
+  console.log(p); // [0, "red"]、[1, "green"]、[2, "blue"]
+}
+
+for (const k of arrC.keys()) {
+  console.log(k); // 0、1、2
+}
+
+for (const v of arrC.values()) {
+  console.log(v); // red、green、blue
+}
