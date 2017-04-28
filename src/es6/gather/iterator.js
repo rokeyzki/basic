@@ -29,22 +29,45 @@ const mapA = new Map();
 mapA.set('edition', 6);
 mapA.set('committee', 'TC39');
 mapA.set('standard', 'ECMA-262');
+mapA.set('arr', ['red', 'green', 'blue']);
 
 for (const [key, value] of mapA) {
   console.log(`${key}: ${value}`);
 }
 
-// DEMO 4 TODO: 待完成对象的遍历器
+// DEMO 4 对象本身没有默认部署Iterator接口，需要手动添加
 
-// const objA = {
-//   edition: 6,
-//   committee: 'TC39',
-//   standard: 'ECMA-262',
-// };
+const objA = {
+  edition: 6,
+  committee: 'TC39',
+  standard: 'ECMA-262',
+  arr: ['red', 'green', 'blue'],
+  [Symbol.iterator]() {
+    const self = this;
+    let index = 0;
+    return {
+      next() {
+        let result;
+        if (index < self.arr.length) {
+          result = {
+            value: self.arr[index],
+            done: false,
+          };
 
-// for (const [key, value] of objA) {
-//   console.log(`${key}: ${value}`);
-// }
+          index += 1;
+        } else {
+          result = { value: undefined, done: true };
+        }
+
+        return result;
+      },
+    };
+  },
+};
+
+for (const v of objA) {
+  console.log(v);
+}
 
 // DEMO 5
 
@@ -54,16 +77,16 @@ const arrB = ['red', 'green', 'blue'];
 const iterator = arrB[Symbol.iterator]();
 
 let foo = iterator.next();
-console.dir(foo); // {value: 'red', done: false}
+console.log(foo); // {value: 'red', done: false}
 
 foo = iterator.next();
-console.dir(foo); // {value: 'green', done: false}
+console.log(foo); // {value: 'green', done: false}
 
 foo = iterator.next();
-console.dir(foo); // {value: 'blue', done: false}
+console.log(foo); // {value: 'blue', done: false}
 
 foo = iterator.next();
-console.dir(foo); // {value: undefined, done: true}
+console.log(foo); // {value: undefined, done: true}
 
 // DEMO 6
 
