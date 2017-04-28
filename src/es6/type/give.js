@@ -7,6 +7,12 @@ const { aa, bb } = { bb: 'bbb', aa: 'aaa' };
 console.log(aa); // "aaa"
 console.log(bb); // "bbb"
 
+// 如果变量名与属性名不一致，必须写成下面这样。
+
+const { aaa: AAA } = { aaa: 'aaa', bbb: 'bbb' };
+console.log(AAA); // "aaa"
+// console.log(aaa); // aaa is not defined
+
 const [foo, [[bar], baz]] = [1, [[2], 3]];
 console.log(foo, bar, baz);
 
