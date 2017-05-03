@@ -1,5 +1,5 @@
-import './appBase';
+// import './appBase';
 
-// import './appRouter';
+import './appRouter';
 
 // import './appAntd';

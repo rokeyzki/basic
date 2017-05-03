@@ -157,11 +157,11 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
 
 }
 
-// 属性(props)验证
-HelloBase.propTypes = { // 如果是引用压缩的react.min.js文件，则不包含属性验证功能
-  prop1: React.PropTypes.number.isRequired,
-  prop2: React.PropTypes.string,
-};
+// 属性(props)验证 15.15 弃用 propTypes
+// HelloBase.propTypes = { // 如果是引用压缩的react.min.js文件，则不包含属性验证功能
+//   prop1: React.PropTypes.number.isRequired,
+//   prop2: React.PropTypes.string,
+// };
 
 // 属性(props)默认值
 HelloBase.defaultProps = {
