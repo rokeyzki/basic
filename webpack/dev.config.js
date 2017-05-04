@@ -1,5 +1,7 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+console.log(process.env.NODE_ENV); // 当前环境
+
 module.exports = {
   entry: {
     'es6/index': './src/es6/entry',
