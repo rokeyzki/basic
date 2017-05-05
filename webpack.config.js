@@ -1,6 +1,9 @@
+const path = require('path');
+const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 console.log(process.env.NODE_ENV); // 当前环境
+console.log(path.resolve(__dirname, '')); // 根目录
 
 module.exports = {
   entry: {
@@ -18,7 +21,7 @@ module.exports = {
   },
 
   output: {
-    path: './dist',
+    path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name].min.js',
   },
 
@@ -75,9 +78,9 @@ module.exports = {
 
   plugins: [
     new ExtractTextPlugin('css/[name].min.css'),
-    // new BannerPlugin('This file is created by Charles Lim'),
+    new webpack.BannerPlugin('This file is created by Charles Lim'),
     // new CommonsChunkPlugin('js/common.min.js'),
-    // new UglifyJsPlugin({compress:{warnings: false}})
+    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
   ],
 
   // imagemin: {

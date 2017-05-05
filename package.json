@@ -8,6 +8,7 @@
     "autoprefixer": "^6.5.4",
     "babel-polyfill": "^6.16.0",
     "cssgrace": "^3.0.0",
+    "cssnano": "^3.10.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "immutable": "^3.8.1",
     "leancloud-storage": "^1.5.0",
@@ -18,7 +19,7 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-promise": "^0.5.3",
-    "webpack": "^1.13.2"
+    "webpack": "^1.15.0"
   },
   "devDependencies": {
     "babel-core": "^6.16.0",
@@ -38,12 +39,11 @@
     "node-sass": "^4.1.0",
     "postcss-loader": "^1.2.1",
     "sass-loader": "^4.1.0",
-    "style-loader": "^0.13.1",
-    "webpack": "^1.13.2"
+    "style-loader": "^0.13.1"
   },
   "scripts": {
-    "build": "./node_modules/.bin/cross-env NODE_ENV=production webpack --config ./webpack/build.config.js -p",
-    "dev": "./node_modules/.bin/cross-env NODE_ENV=development webpack --config ./webpack/dev.config.js",
+    "build": "./node_modules/.bin/cross-env NODE_ENV=production webpack --config ./webpack.config.js -p",
+    "dev": "./node_modules/.bin/cross-env NODE_ENV=development webpack --config ./webpack.config.js",
     "test": "./node_modules/.bin/eslint ./src"
   },
   "keywords": [
