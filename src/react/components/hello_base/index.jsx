@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './style.css';
+import style from './style.scss';
+
+console.dir(style);
 
 export default class HelloBase extends React.Component { // TODO: 待整理React.PureComponent
   constructor(props) {
@@ -85,7 +87,7 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
   // 组件渲染
   render() {
     // 内联样式
-    const style = {
+    const inlineStyle = {
       fontStyle: 'italic',
       color: 'red',
     };
@@ -94,7 +96,8 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
     return (
       <div className="helloBase">
         <div>
-          <p style={style}>hello react</p>
+          {/* 这里使用了：内联样式 */}
+          <p style={inlineStyle}>hello react</p>
         </div>
 
         <div>
@@ -102,7 +105,8 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
           <input type="text" ref={(ref) => { this.one = ref; }} defaultValue="demo" />
         </div>
 
-        <div>
+        {/* 这里使用了：css module */}
+        <div className={style.cssModule}>
           {/* 多选框：不要使用checked属性设置复选按钮的初始选中状态，应当使用defaultChecked */}
           <input
             type="checkbox"
