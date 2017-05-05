@@ -5,7 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 console.log(process.env.NODE_ENV); // 当前环境
 console.log(path.resolve(__dirname, '')); // 根目录
 
-module.exports = {
+const config = {
   entry: {
     'es6/index': './src/es6/entry',
 
@@ -76,13 +76,6 @@ module.exports = {
     ],
   },
 
-  plugins: [
-    new ExtractTextPlugin('css/[name].min.css'),
-    new webpack.BannerPlugin('This file is created by Charles Lim'),
-    // new CommonsChunkPlugin('js/common.min.js'),
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-  ],
-
   // imagemin: {
   //   gifsicle: { interlaced: false },
   //   jpegtran: {
@@ -102,3 +95,18 @@ module.exports = {
   //   }
   // }
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins = [
+    new ExtractTextPlugin('css/[name].min.css'),
+    new webpack.BannerPlugin('This file is created by Charles Lim'),
+    // new CommonsChunkPlugin('js/common.min.js'),
+    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
+  ];
+} else {
+  config.plugins = [
+    new ExtractTextPlugin('css/[name].min.css'),
+  ];
+}
+
+module.exports = config;
