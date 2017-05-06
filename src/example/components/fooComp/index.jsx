@@ -9,41 +9,45 @@ import asyncAction from '../../containers/actions/async';
 import style from './style.scss';
 
 export default class FooComp extends React.PureComponent {
-  static updateState(type) {
-    console.clear();
-
-    if (+type === 1) Store.dispatch(syncAction.change(8));
-    else Store.dispatch(asyncAction.group());
-  }
-
   constructor(props) {
     super(props);
     console.log(this.props.prop1);
     console.log(this.props.prop2);
 
-    this.state = Store.getState();
+    this.state = {
+      data: Store.getState(),
+    };
+
+    console.log(this.state.data.get('key2'));
 
     this.handleClick = this.handleClick.bind(this);
+    this.updateState = this.updateState.bind(this);
     this.reset = this.reset.bind(this);
   }
 
   componentWillMount() {
     Store.subscribe(() => {
-      console.dir(Store.getState());
-      this.setState(Store.getState());
+      this.setState({
+        data: Store.getState(),
+      });
+      console.dir(this.state);
     });
   }
 
-  shouldComponentUpdate(nextProps, nextState) { // TODO::这里与immutable存在兼容性问题
+  shouldComponentUpdate(nextProps, nextState) {
     console.log('触发 shouldComponentUpdate');
-    console.dir(this.state);
-    console.dir(nextState);
 
-    if (this.state.key2 !== nextState.key2) {
+    if (this.state.data.get('key3') !== nextState.data.get('key3')) {
+      console.log('允许重新渲染');
       return true;
     }
 
+    console.log('不允许重新渲染');
     return false;
+  }
+
+  componentDidUpdate() {
+    console.log('组件已重新渲染');
   }
 
   handleClick() {
@@ -54,6 +58,13 @@ export default class FooComp extends React.PureComponent {
     console.log(this.three.value);
 
     console.log('button 点击事件触发');
+  }
+
+  updateState(type) {
+    console.clear();
+
+    if (+type === 1) Store.dispatch(syncAction.change(this.state.data.get('key2')));
+    else Store.dispatch(asyncAction.group());
   }
 
   reset() {
@@ -117,14 +128,14 @@ export default class FooComp extends React.PureComponent {
         <div>
           <input
             type="button" value="state key2 sync button"
-            onClick={() => { FooComp.updateState(1); }}
+            onClick={() => { this.updateState(1); }}
           />
         </div>
 
         <div>
           <input
             type="button" value="state key2 async button"
-            onClick={() => { FooComp.updateState(2); }}
+            onClick={() => { this.updateState(2); }}
           />
         </div>
 
