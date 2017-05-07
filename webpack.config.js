@@ -100,13 +100,21 @@ const webpackConfig = {
 
 if (process.env.NODE_ENV === 'production') {
   webpackConfig.plugins = [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
     new ExtractTextPlugin('css/[name].min.css'),
     new webpack.BannerPlugin('This file is created by Charles Lim'),
     // new CommonsChunkPlugin('js/common.min.js'),
     new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
   ];
-} else {
+}
+
+if (process.env.NODE_ENV === 'development') {
   webpackConfig.plugins = [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
     new ExtractTextPlugin('css/[name].min.css'),
   ];
 }
