@@ -42,9 +42,11 @@
     "style-loader": "^0.13.1"
   },
   "scripts": {
-    "build": "./node_modules/.bin/cross-env NODE_ENV=production webpack --config ./webpack.config.js -p",
-    "dev": "./node_modules/.bin/cross-env NODE_ENV=development webpack --config ./webpack.config.js",
-    "test": "./node_modules/.bin/eslint ./src/example --ext js,jsx"
+    "prebuild": "npm run test",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js -p",
+    "dev": "npm run test && cross-env NODE_ENV=development webpack --config ./webpack.config.js",
+    "test": "eslint ./src/example --ext js,jsx",
+    "posttest": "echo '通过 ESLint 检查'"
   },
   "keywords": [
     "demo"
