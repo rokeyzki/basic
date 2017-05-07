@@ -19,7 +19,7 @@ export default class Component extends React.PureComponent {
   }
 
   componentDidUpdate() {
-    console.log('组件 otherDemo 已重新渲染');
+    console.log('组件 OtherDemo 已重新渲染');
   }
 
   render() {
