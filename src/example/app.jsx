@@ -5,9 +5,9 @@ import ReactDOM from 'react-dom';
 
 import './styles/global.scss';
 
-import FooComp from './components/fooComp';
+import MainDemo from './components/MainDemo';
 
 ReactDOM.render(
-  <FooComp prop1={123} />,
+  <MainDemo />,
   document.querySelector('#app')
 );
