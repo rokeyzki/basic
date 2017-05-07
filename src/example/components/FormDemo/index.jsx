@@ -38,7 +38,6 @@ export default class Component extends React.PureComponent {
       this.setState({
         data: Store.getState(),
       });
-      console.dir(this.state);
     });
   }
 

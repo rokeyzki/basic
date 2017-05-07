@@ -3,6 +3,7 @@ import {
   HashRouter as Router,
   Route,
   Link,
+  Switch,
 } from 'react-router-dom';
 
 import FormDemo from '../FormDemo';
@@ -11,6 +12,12 @@ import Topics from './topics';
 const Home = () => (
   <div>
     <h2>Home</h2>
+  </div>
+);
+
+const NoMatch = () => (
+  <div>
+    <h2>404</h2>
   </div>
 );
 
@@ -29,9 +36,12 @@ const Component = () => (
 
       <hr />
 
-      <Route exact path="/" component={Home} />
-      <Route path="/form" component={Form} />
-      <Route path="/topics" component={Topics} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/form" component={Form} />
+        <Route path="/topics" component={Topics} />
+        <Route component={NoMatch} />
+      </Switch>
     </div>
   </Router>
 );

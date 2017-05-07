@@ -11,8 +11,8 @@ const Topic = ({ match }) => (
   </div>
 );
 
-Topic.PropTypes = {
-  match: PropTypes.object,
+Topic.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 const Component = ({ match }) => (
@@ -46,5 +46,9 @@ const Component = ({ match }) => (
     />
   </div>
 );
+
+Component.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 export default Component;
