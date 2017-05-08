@@ -4,6 +4,7 @@ import {
   Route,
   Link,
   Switch,
+  Redirect,
 } from 'react-router-dom';
 
 import FormDemo from '../FormDemo';
@@ -32,6 +33,7 @@ const Component = () => (
         <li><Link to="/">Home Link</Link></li>
         <li><Link to="/form">Form Link</Link></li>
         <li><Link to="/topics">Topics Link</Link></li>
+        <li><Link to="/redirect">Redirect Link</Link></li>
       </ul>
 
       <hr />
@@ -40,6 +42,9 @@ const Component = () => (
         <Route exact path="/" component={Home} />
         <Route path="/form" component={Form} />
         <Route path="/topics" component={Topics} />
+        <Route path="/redirect">
+          <Redirect to="form" />
+        </Route>
         <Route component={NoMatch} />
       </Switch>
     </div>
