@@ -1,23 +1,24 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 console.log(process.env.NODE_ENV); // 当前环境
 console.log(path.resolve(__dirname, '')); // 根目录
 
 const webpackConfig = {
   entry: {
-    'es6/index': './src/es6/entry',
+    // 'es6/index': './src/es6/entry',
 
-    'api/hello': './src/api/hello/entry',
-    'api/user/signup': './src/api/user/signup/entry',
-    'api/user/login': './src/api/user/login/entry',
-    'api/file': './src/api/file/entry',
+    // 'api/hello': './src/api/hello/entry',
+    // 'api/user/signup': './src/api/user/signup/entry',
+    // 'api/user/login': './src/api/user/login/entry',
+    // 'api/file': './src/api/file/entry',
 
-    'jquery/base': './src/jquery/base/entry',
+    // 'jquery/base': './src/jquery/base/entry',
 
-    'react/hello': './src/react/entry',
-    'redux/demo': './src/redux/entry',
+    // 'react/hello': './src/react/entry',
+    // 'redux/demo': './src/redux/entry',
 
     'example/app': './src/example/app',
   },
@@ -96,27 +97,23 @@ const webpackConfig = {
   //     ]
   //   }
   // }
+
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+    }),
+    new ExtractTextPlugin('css/[name].min.css'),
+    // new CommonsChunkPlugin('js/common.min.js'),
+    new HtmlWebpackPlugin({
+      template: 'views/example.html',
+    }),
+  ],
 };
 
 if (process.env.NODE_ENV === 'production') {
-  webpackConfig.plugins = [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
-    new ExtractTextPlugin('css/[name].min.css'),
-    new webpack.BannerPlugin('This file is created by Charles Lim'),
-    // new CommonsChunkPlugin('js/common.min.js'),
-    new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } }),
-  ];
-}
-
-if (process.env.NODE_ENV === 'development') {
-  webpackConfig.plugins = [
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-    }),
-    new ExtractTextPlugin('css/[name].min.css'),
-  ];
+  const BannerPlugin = new webpack.BannerPlugin('This file is created by Charles Lim');
+  const UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } });
+  webpackConfig.plugins.push(BannerPlugin, UglifyJsPlugin);
 }
 
 module.exports = webpackConfig;

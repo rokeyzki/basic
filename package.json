@@ -35,16 +35,18 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.4.1",
+    "html-webpack-plugin": "^2.28.0",
     "json-loader": "^0.5.4",
     "node-sass": "^4.1.0",
     "postcss-loader": "^1.2.1",
     "sass-loader": "^4.1.0",
-    "style-loader": "^0.13.1"
+    "style-loader": "^0.13.1",
+    "webpack-dev-server": "^1.16.5"
   },
   "scripts": {
     "prebuild": "npm run test",
-    "build": "cross-env NODE_ENV=production webpack --config ./webpack.config.js -p",
-    "dev": "npm run test && cross-env NODE_ENV=development webpack --config ./webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --progress --colors --config ./webpack.config.js -p",
+    "dev": "npm run test && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "test": "eslint ./src/example --ext js,jsx",
     "posttest": "echo '通过 ESLint 检查'"
   },
