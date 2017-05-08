@@ -6,14 +6,14 @@ export default class Component extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      data: Store.getState(),
+      data: Store.getState().demoState,
     };
   }
 
   componentWillMount() {
     Store.subscribe(() => {
       this.setState({
-        data: Store.getState(),
+        data: Store.getState().demoState,
       });
     });
   }

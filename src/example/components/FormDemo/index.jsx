@@ -26,7 +26,7 @@ export default class Component extends React.PureComponent {
     console.log(`props2: ${this.props.prop2}`);
 
     this.state = {
-      data: Store.getState(),
+      data: Store.getState().demoState,
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -36,7 +36,7 @@ export default class Component extends React.PureComponent {
   componentWillMount() {
     Store.subscribe(() => {
       this.setState({
-        data: Store.getState(),
+        data: Store.getState().demoState,
       });
     });
   }
