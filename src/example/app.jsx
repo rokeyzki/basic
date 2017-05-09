@@ -5,9 +5,16 @@ import ReactDOM from 'react-dom';
 
 import './styles/global.scss';
 
-import MainDemo from './components/MainDemo';
+// import MainDemo from './components/MainDemo';
+
+// ReactDOM.render(
+//   <MainDemo />,
+//   document.querySelector('#app')
+// );
+
+import Navigation from './components/Navigation';
 
 ReactDOM.render(
-  <MainDemo />,
+  <Navigation />,
   document.querySelector('#app')
 );

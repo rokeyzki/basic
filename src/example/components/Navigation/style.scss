@@ -1,0 +1,38 @@
+div {
+  color: red;
+}
+
+.container {
+  // margin-left: 250px;
+  background-color: #fff;
+  height: 2000px;
+}
+
+.shadow {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  background-color: #999;
+  opacity: 0.8;
+}
+
+.sidebar {
+  // display: none;
+  background-color: #fff;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  overflow-y: scroll;
+
+  & section {
+    margin: 0 auto; /* 设置块级居中 */
+    padding: 50px; /* 设置内边距 */
+    box-sizing: border-box; /* 内边距计算到盒子宽度中 */
+  }
+}
