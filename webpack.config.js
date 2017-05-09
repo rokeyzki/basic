@@ -56,12 +56,12 @@ const webpackConfig = {
 
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!postcss'),
+        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!resolve-url!postcss'),
       },
 
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!postcss!sass'),
+        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!resolve-url!postcss!sass'),
       },
 
       {
@@ -69,13 +69,13 @@ const webpackConfig = {
         loader: 'json-loader',
       },
 
-      // ,{
-      //   test: /\.(jpe?g|png|gif|svg)$/i,
-      //   loaders: [
-      //     'url-loader?hash=sha512&limit=10000&name=img/[hash].[ext]',
-      //     'img?minimize'
-      //   ]
-      // }
+      {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+          'url-loader?hash=sha512&limit=10000&name=/img/[hash].[ext]',
+          // 'img?minimize',
+        ],
+      },
     ],
   },
 
