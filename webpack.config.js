@@ -56,12 +56,12 @@ const webpackConfig = {
 
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!resolve-url!postcss'),
+        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!postcss!resolve-url'),
       },
 
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!resolve-url!postcss!sass'),
+        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!postcss!resolve-url!sass'),
       },
 
       {
