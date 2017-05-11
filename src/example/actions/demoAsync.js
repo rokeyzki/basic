@@ -11,6 +11,12 @@ const action = {
     //   (v) => { console.error(`catch: ${v}`); }
     // );
 
+    // await fetch('http://baidu.com').then((v) => {
+    //   console.info(`then: ${v}`);
+    // }).catch((v) => {
+    //   console.error(`catch: ${v}`);
+    // });
+
     return {
       type: 'UPDATE_DATA',
       value: 888,
