@@ -1,8 +1,12 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import promiseMiddleware from 'redux-promise';
 
 import reducers from './reducers';
 
-const store = createStore(reducers, applyMiddleware(promiseMiddleware));
+/* eslint-disable no-underscore-dangle */
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+/* eslint-enable */
+
+const store = createStore(reducers, composeEnhancers(applyMiddleware(promiseMiddleware)));
 
 export default store;
