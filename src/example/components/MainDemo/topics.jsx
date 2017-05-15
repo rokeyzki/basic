@@ -5,6 +5,9 @@ import {
   Link,
 } from 'react-router-dom';
 
+import Topic from './topic';
+
+/*
 const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
@@ -13,7 +16,7 @@ const Topic = ({ match }) => (
 
 Topic.propTypes = {
   match: PropTypes.objectOf(PropTypes.any).isRequired,
-};
+};*/
 
 const Component = ({ match }) => (
   <div>
