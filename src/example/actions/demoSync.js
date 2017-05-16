@@ -1,7 +1,9 @@
+import * as types from './types';
+
 const action = {
   change(v) {
     return {
-      type: 'UPDATE_DATA',
+      type: types.UPDATE_DATA,
       value: v,
     };
   },

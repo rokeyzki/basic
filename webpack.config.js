@@ -105,10 +105,12 @@ const webpackConfig = {
     new ExtractTextPlugin('css/[name].min.css'),
     // new CommonsChunkPlugin('js/common.min.js'),
     new HtmlWebpackPlugin({
-      template: 'views/example.html',
+      template: 'views/example.ejs',
       favicon: 'src/example/favicon.ico',
       hash: true,
       chunks: ['example/app'],
+      title: 'Basic Example',
+      env: (process.env.NODE_ENV === 'production') ? 'min.js' : 'js',
     }),
   ],
 };

@@ -1,3 +1,5 @@
+import * as types from './types';
+
 const action = {
   async group() {
     await this.step(5).then((v) => {
@@ -18,7 +20,7 @@ const action = {
     // });
 
     return {
-      type: 'UPDATE_DATA',
+      type: types.UPDATE_DATA,
       value: 888,
     };
   },
