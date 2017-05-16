@@ -27,6 +27,8 @@ class SideBar extends React.PureComponent {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    console.log('SideBar: shouldComponentUpdate');
+
     if (this.state.data.get('sideBar') !== nextState.data.get('sideBar')) {
       return true;
     }

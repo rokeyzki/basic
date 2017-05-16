@@ -32,6 +32,8 @@ class BottomBar extends React.PureComponent {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    console.log('BottomBar: shouldComponentUpdate');
+
     if (this.state.data.get('bottomBar') !== nextState.data.get('bottomBar')) {
       return true;
     }

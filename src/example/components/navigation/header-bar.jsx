@@ -21,11 +21,17 @@ class HeaderBar extends React.PureComponent {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    console.log('HeaderBar: shouldComponentUpdate');
+
     if (this.state.data.get('headerBar') !== nextState.data.get('headerBar')) {
       return true;
     }
 
     return false;
+  }
+
+  componentDidUpdate() {
+    console.log('组件 HeaderBar 已重新渲染');
   }
 
   render() {

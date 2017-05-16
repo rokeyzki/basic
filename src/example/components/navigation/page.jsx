@@ -25,6 +25,8 @@ class Page extends React.PureComponent {
   }
 
   shouldComponentUpdate(nextProps) {
+    console.log('Page: shouldComponentUpdate');
+
     if (this.props.match.params.pageId !== nextProps.match.params.pageId) {
       return true;
     }
@@ -66,6 +68,7 @@ class Page extends React.PureComponent {
     }
 
     if (allow) {
+      console.log('触发 changePageIndexActive', chapterIndex, pageIndex);
       Store.dispatch(navigationAction.changePageIndexActive(chapterIndex, pageIndex, isHideBar));
     } else {
       window.open('/', '_self');

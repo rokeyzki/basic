@@ -28,6 +28,8 @@ class Container extends React.PureComponent {
   }
 
   shouldComponentUpdate(nextProps, nextState) {
+    console.log('Container: shouldComponentUpdate');
+
     if (this.state !== nextState) {
       return false;
     }
