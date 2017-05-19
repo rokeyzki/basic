@@ -22,6 +22,42 @@ class Page extends React.PureComponent {
     });
 
     this.updateState();
+
+    // 异步请求测试 start
+    function requestApi(url) {
+      return new Promise((resolve, reject) => { // resolve 触发成功钩子、reject 触发失败狗子
+        fetch(`//offline-news-api.herokuapp.com/${url}`)
+          .then((response) => {
+            if (response.status >= 400) {
+              console.error('Bad response from server');
+              reject(response.status);
+            } else {
+              resolve(response.json());
+            }
+          });
+      });
+    }
+
+    async function test() {
+      await requestApi('stories')
+      .then((v) => {
+        console.dir(v);
+      })
+      .catch((v) => {
+        console.error(`catch: ${v}`);
+      });
+
+      await requestApi('ddddddd')
+      .then((v) => {
+        console.dir(v);
+      })
+      .catch((v) => {
+        console.error(`catch: ${v}`);
+      });
+    }
+
+    console.log(test());
+    // 异步请求测试 end
   }
 
   shouldComponentUpdate(nextProps) {
