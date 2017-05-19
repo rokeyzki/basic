@@ -47,16 +47,16 @@ class Page extends React.PureComponent {
         console.error(`catch: ${v}`);
       });
 
-      await requestApi('ddddddd')
-      .then((v) => {
-        console.dir(v);
-      })
-      .catch((v) => {
-        console.error(`catch: ${v}`);
-      });
+      // await requestApi('ddddddd')
+      // .then((v) => {
+      //   console.dir(v);
+      // })
+      // .catch((v) => {
+      //   console.error(`catch: ${v}`);
+      // });
     }
 
-    console.log(test());
+    test();
     // 异步请求测试 end
   }
 
