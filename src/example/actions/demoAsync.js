@@ -2,10 +2,17 @@ import * as types from './types';
 
 const action = {
   async group() {
+    const res = {
+      type: types.UPDATE_DATA,
+      value: 0,
+    };
+
     await this.step(5).then((v) => {
       console.info(`then: ${v}`);
+      res.value = 888;
     }).catch((v) => {
       console.error(`catch: ${v}`);
+      res.value = 666;
     });
 
     // await this.step(4).then(
@@ -19,10 +26,7 @@ const action = {
     //   console.error(`catch: ${v}`);
     // });
 
-    return {
-      type: types.UPDATE_DATA,
-      value: 888,
-    };
+    return res;
   },
   step(x) {
     return new Promise((resolve, reject) => {
