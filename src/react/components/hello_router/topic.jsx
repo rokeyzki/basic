@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Route,
   Link,
@@ -9,6 +10,10 @@ const Topic = ({ match }) => (
     <h3>{match.params.topicId}</h3>
   </div>
 );
+
+Topic.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 const Topics = ({ match }) => (
   <div>
@@ -41,5 +46,9 @@ const Topics = ({ match }) => (
     />
   </div>
 );
+
+Topics.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any).isRequired,
+};
 
 export default Topics;
