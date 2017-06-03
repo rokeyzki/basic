@@ -1,5 +1,5 @@
 // CommonJS 规范
-var foo = require('./moduleA');
+const foo = require('./moduleA');
 
 function test(params) {
   return foo() + params;
