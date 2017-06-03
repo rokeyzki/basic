@@ -8,19 +8,19 @@ console.log(path.resolve(__dirname, '')); // 根目录
 
 const webpackConfig = {
   entry: {
-    'es6/index': './src/es6/entry',
+    // 'es6/index': './src/es6/entry',
 
-    'api/hello': './src/api/hello/entry',
-    'api/user/signup': './src/api/user/signup/entry',
-    'api/user/login': './src/api/user/login/entry',
-    'api/file': './src/api/file/entry',
+    // 'api/hello': './src/api/hello/entry',
+    // 'api/user/signup': './src/api/user/signup/entry',
+    // 'api/user/login': './src/api/user/login/entry',
+    // 'api/file': './src/api/file/entry',
 
-    'jquery/base': './src/jquery/base/entry',
+    // 'jquery/base': './src/jquery/base/entry',
 
     'react/hello': './src/react/entry',
-    'redux/demo': './src/redux/entry',
+    // 'redux/demo': './src/redux/entry',
 
-    'example/app': './src/example/app',
+    // 'example/app': './src/example/app',
   },
 
   output: {

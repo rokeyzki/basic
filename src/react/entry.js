@@ -1,4 +1,6 @@
-import './appBase';
+// import './appBase';
+
+import './appRedux'; // react-redux
 
 // import './appRouter';
 
