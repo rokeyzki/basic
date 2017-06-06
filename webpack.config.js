@@ -20,7 +20,7 @@ const webpackConfig = {
     'react/hello': './src/react/entry',
     // 'redux/demo': './src/redux/entry',
 
-    // 'example/app': './src/example/app',
+    'example/app': './src/example/app',
   },
 
   output: {
