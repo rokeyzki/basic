@@ -5,6 +5,7 @@
   "main": "webpack.config.js",
   "dependencies": {
     "antd": "^2.5.1",
+    "axios": "^0.16.2",
     "immutable": "^3.8.1",
     "isomorphic-fetch": "^2.2.1",
     "leancloud-storage": "^1.5.0",

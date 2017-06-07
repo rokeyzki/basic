@@ -36,6 +36,7 @@ const webpackConfig = {
     react: 'React',
     'react-dom': 'ReactDOM',
     'react-router': 'ReactRouter',
+    axios: 'axios',
     // echarts: true,
     // g2: 'G2',
   },

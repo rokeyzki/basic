@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import Store from '../../store';
 import navigationAction from '../../actions/navigation';
@@ -26,15 +27,31 @@ class Page extends React.PureComponent {
     // 异步请求测试 start
     function requestApi(url) {
       return new Promise((resolve, reject) => { // resolve 触发成功钩子、reject 触发失败狗子
-        fetch(`//offline-news-api.herokuapp.com/${url}`)
-          .then((response) => {
-            if (response.status >= 400) {
-              console.error('Bad response from server');
-              reject(response.status);
-            } else {
-              resolve(response.json());
-            }
-          });
+        // 示例：使用 fetch 请求资源（IE9 不支持 fetch 的跨域请求）
+        // fetch(
+        //   `//offline-news-api.herokuapp.com/${url}`,
+        // ).then((response) => {
+        //   if (response.status >= 400) {
+        //     console.error('Bad response from server');
+        //     reject(response.status);
+        //   } else {
+        //     console.dir(response);
+        //     resolve(response.json());
+        //   }
+        // });
+
+        // 示例：使用 axios 请求资源
+        axios(
+          `//offline-news-api.herokuapp.com/${url}`,
+        ).then((response) => {
+          if (response.status >= 400) {
+            console.error('Bad response from server');
+            reject(response.status);
+          } else { // axios 返回的数据结构与fetch不同
+            console.dir(response);
+            resolve(response.data);
+          }
+        });
       });
     }
 
