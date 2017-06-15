@@ -4,32 +4,33 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 console.log(process.env.NODE_ENV); // 当前环境
-console.log(path.resolve(__dirname, '')); // 根目录
+console.log(path.resolve(__dirname, '')); // __dirname 指的是 webpack.config.js 所在的目录
 
 const webpackConfig = {
+  context: path.resolve(__dirname, './src'),
   entry: {
-    // 'es6/index': './src/es6/entry',
+    'es6/index': './es6/entry',
 
-    // 'api/hello': './src/api/hello/entry',
-    // 'api/user/signup': './src/api/user/signup/entry',
-    // 'api/user/login': './src/api/user/login/entry',
-    // 'api/file': './src/api/file/entry',
+    'api/hello': './api/hello/entry',
+    'api/user/signup': './api/user/signup/entry',
+    'api/user/login': './api/user/login/entry',
+    'api/file': './api/file/entry',
 
-    // 'jquery/base': './src/jquery/base/entry',
+    'jquery/base': './jquery/base/entry',
 
-    'react/hello': './src/react/entry',
-    // 'redux/demo': './src/redux/entry',
+    'react/hello': './react/entry',
+    'redux/demo': './redux/entry',
 
-    'example/app': './src/example/app',
+    'example/app': './example/app',
   },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, './dist'),
     filename: 'js/[name].min.js',
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js', '.jsx'],
   },
 
   externals: {
@@ -42,37 +43,53 @@ const webpackConfig = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
+        include: path.resolve(__dirname, './src'),
         exclude: /(node_modules|dist)/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
       },
 
       {
         test: /\.jsx$/,
         exclude: /(node_modules|dist)/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
       },
 
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!resolve-url!postcss'),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader?modules&localIdentName=[local]__[name]-[hash:base64:5]',
+            'resolve-url-loader',
+            'postcss-loader?sourceMap=true',
+          ],
+        }),
       },
 
       {
         test: /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]__[local]-[hash:base64:5]!resolve-url!postcss!sass'),
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader?modules&localIdentName=[local]__[name]-[hash:base64:5]',
+            'resolve-url-loader',
+            'postcss-loader?sourceMap=true',
+            'sass-loader',
+          ],
+        }),
       },
 
       {
         test: /\.json$/,
-        loader: 'json-loader',
+        use: 'json-loader',
       },
 
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        loaders: [
+        use: [
           'url-loader?hash=sha512&limit=10000&name=/img/[hash].[ext]',
           // 'img?minimize',
         ],
@@ -106,8 +123,8 @@ const webpackConfig = {
     new ExtractTextPlugin('css/[name].min.css'),
     // new CommonsChunkPlugin('js/common.min.js'),
     new HtmlWebpackPlugin({
-      template: 'views/example.ejs',
-      favicon: 'src/example/favicon.ico',
+      template: '../views/example.ejs',
+      favicon: './example/favicon.ico',
       hash: true,
       chunks: ['example/app'],
       title: 'Basic Example',
