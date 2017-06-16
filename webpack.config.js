@@ -20,8 +20,9 @@ const webpackConfig = {
 
     'react/hello': './react/entry',
     'redux/demo': './redux/entry',
-
     'example/app': './example/app',
+
+    'vue/index': './vue/main',
   },
 
   output: {
@@ -30,7 +31,7 @@ const webpackConfig = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.vue'],
   },
 
   externals: {
@@ -40,6 +41,7 @@ const webpackConfig = {
     axios: 'axios',
     // echarts: true,
     // g2: 'G2',
+    vue: 'Vue',
   },
 
   module: {
@@ -55,6 +57,12 @@ const webpackConfig = {
         test: /\.jsx$/,
         exclude: /(node_modules|dist)/,
         use: 'babel-loader',
+      },
+
+      {
+        test: /\.vue$/,
+        exclude: /(node_modules|dist)/,
+        use: 'vue-loader',
       },
 
       {
