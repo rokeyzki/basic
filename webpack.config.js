@@ -27,6 +27,7 @@ const webpackConfig = {
 
   output: {
     path: path.resolve(__dirname, './dist'),
+    publicPath: '/',
     filename: 'js/[name].min.js',
   },
 
@@ -98,7 +99,7 @@ const webpackConfig = {
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
-          'url-loader?hash=sha512&limit=10000&name=/img/[hash].[ext]',
+          'url-loader?hash=sha512&limit=8192&name=img/[hash].[ext]',
           // 'img?minimize',
         ],
       },
