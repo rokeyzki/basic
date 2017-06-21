@@ -54,11 +54,13 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "prebuild": "npm run test",
+    "prebuild": "npm run lint",
     "build": "cross-env NODE_ENV=production webpack --progress --colors --config ./webpack.config.js -p",
-    "dev": "npm run test && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
-    "test": "eslint ./src/example --ext js,jsx",
-    "posttest": "echo '通过 ESLint 检查'"
+    "dev": "npm run lint && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
+    "lint": "eslint ./src/example --ext js,jsx",
+    "postlint": "echo '通过 ESLint 检查' && npm run test",
+    "test": "mocha ./src/mocha --recursive",
+    "posttest": "echo '通过 mocha 检查'"
   },
   "keywords": [
     "demo"
