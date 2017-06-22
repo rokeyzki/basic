@@ -5,11 +5,11 @@ import React from 'react';
 import { Provider } from 'react-redux';
 
 import store from './store';
-import { CounterCT } from './containers/counter';
+import { CounterContainer } from './containers/counter';
 
 const HelloRedux = () => (
   <Provider store={store}>
-    <CounterCT />
+    <CounterContainer />
   </Provider>
 );
 

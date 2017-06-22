@@ -23,9 +23,9 @@ function mapDispatchToProps(dispatch) {
 }
 
 // Connected Component
-const CounterCT = connect(
+const CounterContainer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(Counter);
 
-export { CounterCT };
+export { CounterContainer };
