@@ -44,6 +44,7 @@
     "mocha": "^3.4.2",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
+    "pre-commit": "^1.2.2",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
@@ -58,10 +59,14 @@
     "build": "cross-env NODE_ENV=production webpack --progress --colors --config ./webpack.config.js -p",
     "dev": "npm run lint && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "lint": "eslint ./src/example --ext js,jsx",
-    "postlint": "echo '通过 ESLint 检查' && npm run test",
+    "postlint": "echo 'ESLint CHECK OK' && npm run test",
     "test": "mocha ./src/mocha --recursive",
-    "posttest": "echo '通过 mocha 检查'"
+    "posttest": "echo 'Mocha CHECK OK'"
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "keywords": [
     "demo"
   ],
