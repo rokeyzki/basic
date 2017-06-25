@@ -40,6 +40,7 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.28.0",
+    "jsdom": "^8.5.0",
     "json-loader": "^0.5.4",
     "mocha": "^3.4.2",
     "node-sass": "^4.5.3",
@@ -60,7 +61,7 @@
     "dev": "npm run lint && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "lint": "eslint ./src/example --ext js,jsx",
     "postlint": "echo 'ESLint CHECK OK' && npm run test",
-    "test": "mocha ./src/mocha --recursive",
+    "test": "mocha --recursive ./src/react/components/hello_redux --compilers js:babel-core/register --require ./src/react/components/hello_redux/test/setup.js",
     "posttest": "echo 'Mocha CHECK OK'"
   },
   "pre-commit": [
