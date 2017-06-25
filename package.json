@@ -65,8 +65,7 @@
     "posttest": "echo 'Mocha CHECK OK'"
   },
   "pre-commit": [
-    "lint",
-    "test"
+    "lint"
   ],
   "keywords": [
     "demo"
