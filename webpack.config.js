@@ -144,7 +144,7 @@ const webpackConfig = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  const BannerPlugin = new webpack.BannerPlugin('This file is created by Charles Lim');
+  const BannerPlugin = new webpack.BannerPlugin(`This file is created by Charles Lim, Last update: ${new Date().toString()}`);
   const UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } });
   webpackConfig.plugins.push(BannerPlugin, UglifyJsPlugin);
 }
