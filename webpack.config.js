@@ -48,14 +48,8 @@ const webpackConfig = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         include: path.resolve(__dirname, './src'),
-        exclude: /(node_modules|dist)/,
-        use: 'babel-loader',
-      },
-
-      {
-        test: /\.jsx$/,
         exclude: /(node_modules|dist)/,
         use: 'babel-loader',
       },
@@ -97,10 +91,17 @@ const webpackConfig = {
       },
 
       {
-        test: /\.(jpe?g|png|gif|svg)$/i,
+        test: /\.(jpe?g|png|gif)$/i,
         use: [
           'url-loader?hash=sha512&limit=8192&name=img/[hash].[ext]',
           // 'img?minimize',
+        ],
+      },
+
+      {
+        test: /\.svg$/,
+        use: [
+          'svg-inline-loader?classPrefix',
         ],
       },
     ],

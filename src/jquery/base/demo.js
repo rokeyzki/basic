@@ -2,7 +2,6 @@ import './postcss.css';
 import './test.scss';
 
 import fooJson from './foo.json';
-
 console.dir(fooJson);
 
 const showWidth = $(window).width();
