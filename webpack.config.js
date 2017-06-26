@@ -91,17 +91,10 @@ const webpackConfig = {
       },
 
       {
-        test: /\.(jpe?g|png|gif)$/i,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           'url-loader?hash=sha512&limit=8192&name=img/[hash].[ext]',
           // 'img?minimize',
-        ],
-      },
-
-      {
-        test: /\.svg$/,
-        use: [
-          'svg-inline-loader?classPrefix',
         ],
       },
     ],
