@@ -1,5 +1,6 @@
 const initialState = {
   count: 0,
+  color: 'black',
 };
 
 const reducer = (state = initialState, action) => {
