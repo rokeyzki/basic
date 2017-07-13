@@ -20,7 +20,8 @@
         "no-console": [0],
         "import/prefer-default-export": [0],
         "import/no-extraneous-dependencies": [0],
-        "jsx-a11y/no-static-element-interactions": [0]
+        "jsx-a11y/no-static-element-interactions": [0],
+        "react/jsx-filename-extension": [0]
     },
     "globals": {
         "axios": true
