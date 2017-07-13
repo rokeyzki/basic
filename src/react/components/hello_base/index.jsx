@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import ppHOC from './hoc';
+
 import style from './style.scss';
 
 console.dir(style);
 
+@ppHOC
 export default class HelloBase extends React.Component { // TODO: 待整理React.PureComponent
   constructor(props) {
     console.log('初次载入组件时才会执行构造函数');
