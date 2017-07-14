@@ -30,10 +30,10 @@ const Component = () => (
   <Router>
     <div>
       <ul>
-        <li><Link to="/">Home Link</Link></li>
-        <li><Link to="/form">Form Link</Link></li>
-        <li><Link to="/topics">Topics Link</Link></li>
-        <li><Link to="/redirect">Redirect Link</Link></li>
+        <li><Link to="/" replace>Home Link</Link></li>
+        <li><Link to="/form" replace>Form Link</Link></li>
+        <li><Link to="/topics" replace>Topics Link</Link></li>
+        <li><Link to="/redirect" replace>Redirect Link</Link></li>
       </ul>
 
       <hr />

@@ -65,7 +65,7 @@ const webpackConfig = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader?modules&localIdentName=[local]__[name]-[hash:base64:5]',
+            'css-loader?importLoaders=1&modules&localIdentName=[local]__[name]-[hash:base64:5]',
             'resolve-url-loader',
             'postcss-loader?sourceMap=true',
           ],
@@ -77,7 +77,7 @@ const webpackConfig = {
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: [
-            'css-loader?modules&localIdentName=[local]__[name]-[hash:base64:5]',
+            'css-loader?importLoaders=1&modules&localIdentName=[local]__[name]-[hash:base64:5]',
             'resolve-url-loader',
             'postcss-loader?sourceMap=true',
             'sass-loader',
