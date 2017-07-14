@@ -31,7 +31,8 @@ export default class Component extends React.PureComponent {
         <p>state key1: {this.state.data.get('key1')}</p>
         <p>state key2: {this.state.data.get('key2')}</p>
         <p>state key3: {this.state.data.get('key3').toString()}</p>
-        <div className={style.testImg} />
+        <div className={style.testImgA} />
+        <div className={style.testImgB} />
       </div>
     );
   }

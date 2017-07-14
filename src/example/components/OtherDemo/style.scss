@@ -1,4 +1,9 @@
-.testImg {
+.testImgA {
   background-image: url(./images/foo.gif);
+  height: 400px;
+}
+
+.testImgB {
+  background-image: url(../../images/reactive.gif);
   height: 400px;
 }
