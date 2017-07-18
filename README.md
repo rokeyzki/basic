@@ -21,9 +21,9 @@
     * 地图
 
 ## TODO
-* 单元测试：mocha
+* 测试驱动：karma
+* 测试框架：mocha
 * 断言库：chai
-* 构建工具：gulp
 * 算法：blog 整理
 * 设计模式：极客学院视频教程
 * js 基础：blog 整理

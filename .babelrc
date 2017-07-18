@@ -12,6 +12,7 @@
         "style": "css"
       }
     ],
-    "transform-decorators-legacy"
+    "transform-decorators-legacy",
+    "istanbul" // Coverage测试覆盖率中所依赖
   ]
 }

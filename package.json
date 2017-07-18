@@ -24,6 +24,7 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
     "babel-plugin-import": "^1.2.1",
+    "babel-plugin-istanbul": "^4.1.4",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-polyfill": "^6.16.0",
     "babel-preset-es2015": "^6.24.1",
@@ -45,6 +46,12 @@
     "html-webpack-plugin": "^2.28.0",
     "jsdom": "^8.5.0",
     "json-loader": "^0.5.4",
+    "karma": "^1.7.0",
+    "karma-chai": "^0.1.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "karma-phantomjs-launcher": "^1.0.4",
+    "karma-webpack": "^2.0.4",
     "mocha": "^3.4.2",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
@@ -65,8 +72,10 @@
     "dev": "npm run lint && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "lint": "eslint ./src/example --ext js,jsx",
     "postlint": "echo 'ESLint CHECK OK' && npm run test",
-    "test": "mocha --recursive ./src/react/components/hello_redux --compilers js:babel-core/register --require ./src/react/components/hello_redux/test/setup.js",
-    "posttest": "echo 'Mocha CHECK OK'"
+    "mocha": "mocha --recursive ./src/react/components/hello_redux --compilers js:babel-core/register --require ./src/react/components/hello_redux/test/setup.js",
+    "postmocha": "echo 'Mocha CHECK OK'",
+    "test": "karma start",
+    "posttest": "echo 'KARMA CHECK OK'"
   },
   "pre-commit": [
     "lint"
