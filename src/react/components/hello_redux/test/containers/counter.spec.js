@@ -7,7 +7,7 @@ import { CounterContainer } from '../../containers/counter';
 
 const TestCounterContainer = ppHOC(CounterContainer);
 
-describe('A suite', () => {
+describe('containers test', () => {
   it('渲染的组件有四个按钮', () => {
     expect(mount(<TestCounterContainer />).find('button')).to.have.length(4);
   });

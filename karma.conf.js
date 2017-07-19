@@ -7,12 +7,9 @@ module.exports = (config) => {
       'mocha', 'chai',
     ],
     reporters: [
-      'progress', 'coverage',
+      'mocha', 'progress', 'coverage',
     ],
     webpack: webpackConfig,
-    webpackServer: {
-      noInfo: true,
-    },
     browsers: ['PhantomJS'],
     port: 9876,
     colors: true,
