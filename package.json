@@ -44,7 +44,6 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "html-webpack-plugin": "^2.28.0",
-    "jsdom": "^8.5.0",
     "json-loader": "^0.5.4",
     "karma": "^1.7.0",
     "karma-chai": "^0.1.0",
@@ -67,15 +66,14 @@
     "webpack-dev-server": "^2.4.5"
   },
   "scripts": {
-    "prebuild": "npm run lint",
+    "prebuild": "npm run lint && npm run test",
     "build": "cross-env NODE_ENV=production webpack --progress --colors --config ./webpack.config.js -p",
-    "dev": "npm run lint && cross-env NODE_ENV=development webpack-dev-server --hot --inline",
+    "predev": "npm run lint",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --inline",
     "lint": "eslint ./src/example --ext js,jsx",
-    "postlint": "echo 'ESLint CHECK OK' && npm run test",
-    "mocha": "mocha --recursive ./src/react/components/hello_redux --compilers js:babel-core/register --require ./src/react/components/hello_redux/test/setup.js",
-    "postmocha": "echo 'Mocha CHECK OK'",
-    "test": "karma start",
-    "posttest": "echo 'KARMA CHECK OK'"
+    "postlint": "echo 'ESLint CHECK OK'",
+    "test": "cross-env NODE_ENV=test karma start",
+    "posttest": "echo 'Karma CHECK OK'"
   },
   "pre-commit": [
     "lint"

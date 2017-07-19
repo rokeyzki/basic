@@ -3,7 +3,21 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-console.log(process.env.NODE_ENV); // 当前环境
+switch (process.env.NODE_ENV) {
+  case 'production':
+    console.log('webpack 生产环境配置');
+    break;
+  case 'test':
+    console.log('webpack 测试环境配置');
+    break;
+  case 'development':
+    console.log('webpack 开发环境配置');
+    break;
+  default:
+    console.log('webpack 无环境配置');
+    break;
+}
+
 console.log(path.resolve(__dirname, '')); // __dirname 指的是 webpack.config.js 所在的目录
 
 const webpackConfig = {
@@ -33,16 +47,6 @@ const webpackConfig = {
 
   resolve: {
     extensions: ['.js', '.jsx', '.vue'],
-  },
-
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-    'react-router': 'ReactRouter',
-    axios: 'axios',
-    // echarts: true,
-    // g2: 'G2',
-    vue: 'Vue',
   },
 
   module: {
@@ -135,6 +139,18 @@ const webpackConfig = {
     }),
   ],
 };
+
+if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'development') {
+  webpackConfig.externals = {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    'react-router': 'ReactRouter',
+    axios: 'axios',
+    // echarts: true,
+    // g2: 'G2',
+    vue: 'Vue',
+  };
+}
 
 if (process.env.NODE_ENV === 'production') {
   const BannerPlugin = new webpack.BannerPlugin(`This file is created by Charles Lim, Last update: ${new Date().toString()}`);
