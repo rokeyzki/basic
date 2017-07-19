@@ -98,30 +98,10 @@ const webpackConfig = {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: [
           'url-loader?hash=sha512&limit=8192&name=img/[hash].[ext]',
-          // 'img?minimize',
         ],
       },
     ],
   },
-
-  // imagemin: {
-  //   gifsicle: { interlaced: false },
-  //   jpegtran: {
-  //     progressive: true,
-  //     arithmetic: false
-  //   },
-  //   optipng: { optimizationLevel: 5 },
-  //   pngquant: {
-  //     floyd: 0.5,
-  //     speed: 2
-  //   },
-  //   svgo: {
-  //     plugins: [
-  //       { removeTitle: true },
-  //       { convertPathData: false }
-  //     ]
-  //   }
-  // }
 
   plugins: [
     new webpack.DefinePlugin({
