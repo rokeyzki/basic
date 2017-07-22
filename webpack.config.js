@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 switch (process.env.NODE_ENV) {
   case 'production':
@@ -37,6 +39,9 @@ const webpackConfig = {
     'example/app': './example/app',
 
     'vue/index': './vue/main',
+
+    // 'commonjs/require-a': './commonjs/require-a',
+    // 'commonjs/require-b': './commonjs/require-b',
   },
 
   output: {
@@ -116,6 +121,11 @@ const webpackConfig = {
       chunks: ['example/app'],
       title: 'Basic Example',
       env: (process.env.NODE_ENV === 'production') ? 'min.js' : 'js',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+      },
     }),
   ],
 };
@@ -133,9 +143,32 @@ if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'developme
 }
 
 if (process.env.NODE_ENV === 'production') {
-  const BannerPlugin = new webpack.BannerPlugin(`This file is created by Charles Lim, Last update: ${new Date().toString()}`);
-  const UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({ compress: { warnings: false } });
-  webpackConfig.plugins.push(BannerPlugin, UglifyJsPlugin);
+  const BannerPluginObj = new webpack.BannerPlugin(`This file is created by Charles Lim, Last update: ${new Date().toString()}`);
+  const UglifyJsPluginObj = new webpack.optimize.UglifyJsPlugin({
+    compress: {
+      warnings: false,
+    },
+  });
+  const CompressionPluginObj = new CompressionPlugin({
+    asset: '[path].gz[query]',
+    algorithm: 'gzip',
+    test: /\.(js|css)$/,
+    threshold: 10240,
+    minRatio: 0.8,
+  });
+  webpackConfig.plugins.push(BannerPluginObj, UglifyJsPluginObj, CompressionPluginObj);
+
+  webpack.devtool = false;
+}
+
+if (process.env.NODE_ENV === 'development') {
+  const BundleAnalyzerPluginObj = new BundleAnalyzerPlugin({
+    analyzerPort: 8081,
+    openAnalyzer: false,
+  });
+  webpackConfig.plugins.push(BundleAnalyzerPluginObj);
+
+  webpack.devtool = '#cheap-module-eval-source-map';
 }
 
 module.exports = webpackConfig;
