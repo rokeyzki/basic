@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="http://cdn.bootcss.com/angular.js/1.2.17/angular.min.js"></script>
+</head>
+
+<body>
+  <div ng-app="" ng-init="friends = [
+    {name:'tom', age:16},
+    {name:'jerry', age:20}, 
+    {name:'garfield', age:22}]">
+
+    输入过滤:<input type="text" ng-model="name">
+    <ul style="list-style-type:none">
+      <li> 姓名，年龄</li>
+      <li ng-repeat="x in friends | filter:name">
+        {{ x.name + ' , ' + x.age }}
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>

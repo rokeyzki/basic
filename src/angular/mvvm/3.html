@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="http://cdn.bootcss.com/angular.js/1.2.17/angular.min.js"></script>
+</head>
+
+<body>
+
+  <div ng-app="" ng-controller="MyController">
+    Your name:
+    <input type="text" ng-model="username">
+    <button ng-click="sayHello()">打招呼</button>
+    <hr /> {{greeting}}
+  </div>
+
+  <script src="./3.js"></script>
+</body>
+
+</html>
