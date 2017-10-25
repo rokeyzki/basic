@@ -35,7 +35,7 @@ class Topic extends React.PureComponent {
   }
 
   render() {
-    const match = this.props.match;
+    const { match } = this.props;
 
     return (
       <div>

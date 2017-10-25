@@ -40,9 +40,7 @@ class Page extends React.PureComponent {
         // });
 
         // 示例：使用 axios 请求资源
-        axios(
-          `//offline-news-api.herokuapp.com/${url}`,
-        ).then((response) => {
+        axios(`//offline-news-api.herokuapp.com/${url}`).then((response) => {
           if (response.status >= 400) {
             console.error('Bad response from server');
             reject(response.status);
@@ -56,12 +54,12 @@ class Page extends React.PureComponent {
 
     async function test() {
       await requestApi('stories')
-      .then((v) => {
-        console.dir(v);
-      })
-      .catch((v) => {
-        console.error(`catch: ${v}`);
-      });
+        .then((v) => {
+          console.dir(v);
+        })
+        .catch((v) => {
+          console.error(`catch: ${v}`);
+        });
 
       // await requestApi('ddddddd')
       // .then((v) => {
@@ -128,7 +126,7 @@ class Page extends React.PureComponent {
   }
 
   render() {
-    const match = this.props.match;
+    const { match } = this.props;
 
     return (
       <div>

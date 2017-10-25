@@ -108,7 +108,7 @@ class SideBar extends React.PureComponent {
     }
 
     const sideBarList = getSideBarList().fooList; // console.dir(sideBarList);
-    const allSectionTotal = getSideBarList().allSectionTotal; // 所有小节的总数
+    const { allSectionTotal } = getSideBarList(); // 所有小节的总数
 
     function getTypeText(type) {
       let typeText;

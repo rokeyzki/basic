@@ -10,7 +10,7 @@ import MainDemo from './components/MainDemo';
 
 ReactDOM.render(
   <MainDemo />,
-  document.querySelector('#app')
+  document.querySelector('#app'),
 );
 
 // import { Navigation } from './components/navigation';

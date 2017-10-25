@@ -21,7 +21,11 @@
         "import/prefer-default-export": [0],
         "import/no-extraneous-dependencies": [0],
         "jsx-a11y/no-static-element-interactions": [0],
-        "react/jsx-filename-extension": [0]
+        "jsx-a11y/anchor-is-valid": [0],
+        "jsx-a11y/click-events-have-key-events": [0],
+        "react/jsx-filename-extension": [0],
+        "react/no-unused-state": [1],
+        "react/no-redundant-should-component-update": [0]
     },
     "globals": {
         "axios": true

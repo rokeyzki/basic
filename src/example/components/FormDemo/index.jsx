@@ -127,14 +127,16 @@ export default class Component extends React.PureComponent {
 
         <div>
           <input
-            type="button" value="state key2 sync button"
+            type="button"
+            value="state key2 sync button"
             onClick={() => { Component.updateState(1); }}
           />
         </div>
 
         <div>
           <input
-            type="button" value="state key2 async button"
+            type="button"
+            value="state key2 async button"
             onClick={() => { Component.updateState(2); }}
           />
         </div>
@@ -148,7 +150,6 @@ export default class Component extends React.PureComponent {
       </div>
     );
   }
-
 }
 
 Component.propTypes = {
@@ -157,6 +158,6 @@ Component.propTypes = {
 };
 
 Component.defaultProps = {
-  prop1: 0,
+  // prop1: 0,
   prop2: 'abc',
 };
