@@ -45,8 +45,3 @@
 ## 严格模式
 * ES6 默认启用严格模式
 * Node.js 默认启用严格模式
-
-## 临时
-```json
-"prebuild": "npm run lint && npm run test",
-```

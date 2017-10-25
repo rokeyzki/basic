@@ -10,7 +10,7 @@ module.exports = (config) => {
       'mocha', 'progress', 'coverage',
     ],
     webpack: webpackConfig,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
     port: 9876,
     colors: true,
     autoWatch: true,
