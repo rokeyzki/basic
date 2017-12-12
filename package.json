@@ -37,7 +37,7 @@
     "css-loader": "^0.28.4",
     "cssgrace": "^3.0.0",
     "cssnano": "^3.10.0",
-    "draftjs-to-html": "^0.7.6",
+    "draftjs-to-html": "^0.8.1",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
