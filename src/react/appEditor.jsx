@@ -5,5 +5,5 @@ import { HelloEditor } from './components/hello_editor';
 
 ReactDOM.render(
   <HelloEditor />,
-  document.querySelector('#app')
+  document.querySelector('#app'),
 );

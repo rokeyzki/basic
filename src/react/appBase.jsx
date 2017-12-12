@@ -7,5 +7,5 @@ import HelloBase from './components/hello_base';
 console.log(test('world: helper test'));
 ReactDOM.render(
   <HelloBase prop1={123} />,
-  document.querySelector('#app')
+  document.querySelector('#app'),
 );
