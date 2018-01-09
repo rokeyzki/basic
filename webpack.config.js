@@ -26,6 +26,7 @@ const webpackConfig = {
   context: path.resolve(__dirname, './src'),
   entry: {
     'es6/index': './es6/entry',
+    'ts/index': './ts/entry',
 
     'api/hello': './api/hello/entry',
     'api/user/signup': './api/user/signup/entry',
@@ -51,7 +52,7 @@ const webpackConfig = {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx', '.vue'],
+    extensions: ['.js', '.jsx', '.vue', '.ts', '.tsx'],
   },
 
   module: {
@@ -67,6 +68,13 @@ const webpackConfig = {
         test: /\.vue$/,
         exclude: /(node_modules|dist)/,
         use: 'vue-loader',
+      },
+
+      {
+        test: /\.(ts|tsx)$/,
+        include: path.resolve(__dirname, './src'),
+        exclude: /(node_modules|dist)/,
+        use: 'awesome-typescript-loader',
       },
 
       {
