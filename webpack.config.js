@@ -26,7 +26,7 @@ const webpackConfig = {
   context: path.resolve(__dirname, './src'),
   entry: {
     'es6/index': './es6/entry',
-    'ts/index': './ts/entry',
+    'ts/index': './ts/app',
 
     'api/hello': './api/hello/entry',
     'api/user/signup': './api/user/signup/entry',
