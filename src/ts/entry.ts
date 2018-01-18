@@ -1,7 +1,7 @@
 function sayHello(name: string) {
-  return 'Hello, ' + name;
+  return "Hello, " + name;
 }
 
-let myName = 'Charles Lim';
+let myName = "Charles Lim";
 
 console.log(sayHello(myName));

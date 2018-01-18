@@ -1,6 +1,7 @@
 {
   "extends": ["tslint:latest", "tslint-react"],
   "rules": {
-    "no-implicit-dependencies": [0]
+    "no-implicit-dependencies": [0],
+    "no-console": [0]
   }
 }
