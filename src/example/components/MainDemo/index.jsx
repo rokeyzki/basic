@@ -9,6 +9,7 @@ import {
 
 import FormDemo from '../FormDemo';
 import Topics from './topics';
+import { HelloTS } from './hello-ts.tsx';
 
 const Home = () => (
   <div>
@@ -37,6 +38,8 @@ const Component = () => (
       </ul>
 
       <hr />
+
+      <HelloTS compiler="TypeScript" framework="React" />
 
       <Switch>
         <Route exact path="/" component={Home} />

@@ -127,8 +127,8 @@ const webpackConfig = {
       template: '../views/example.ejs',
       favicon: './example/favicon.ico',
       hash: true,
-      // chunks: ['example/app'],
-      chunks: ['ts/index'],
+      chunks: ['example/app'],
+      // chunks: ['ts/index'],
       title: 'Basic Example',
       env: (process.env.NODE_ENV === 'production') ? 'min.js' : 'js',
       minify: {
