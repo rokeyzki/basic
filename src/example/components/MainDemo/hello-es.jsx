@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
- * In order to compatible with the tsx
+ * In order to compatible with the TSX
  * @augments {React.Component<*, *>}
  */
 export class HelloES extends React.PureComponent {
