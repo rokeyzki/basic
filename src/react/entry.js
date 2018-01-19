@@ -1,9 +1,9 @@
 // import './appBase';
 
-// import './appRedux'; // react-redux
+import './appRedux'; // react-redux
 
 // import './appRouter';
 
 // import './appAntd';
 
-import './appEditor';
+// import './appEditor';

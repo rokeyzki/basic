@@ -25,7 +25,7 @@ function mapDispatchToProps(dispatch) {
 // Connected Component
 const CounterContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(Counter);
 
 export { CounterContainer };

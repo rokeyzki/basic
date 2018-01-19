@@ -1,7 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Counter = ({ value, color, onIncreaseClick, onReduceClick, onBlackClick, onRedClick }) => (
+const Counter = ({
+  value,
+  color,
+  onIncreaseClick,
+  onReduceClick,
+  onBlackClick,
+  onRedClick,
+}) => (
   <div>
     <p style={{ color }}>{value}</p>
     <button onClick={onIncreaseClick}>增加</button>
