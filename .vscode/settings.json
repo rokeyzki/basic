@@ -10,5 +10,6 @@
         "**/.hg": true,
         "**/.DS_Store": true
     },
-    "vsicons.presets.angular": false
+    "vsicons.presets.angular": false,
+    "javascript.validate.enable": false
   }
