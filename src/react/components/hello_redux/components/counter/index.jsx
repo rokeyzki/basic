@@ -11,7 +11,7 @@ type Props = {
   onRedClick: any,
 };
 
-const Counter = (props: Props) => (
+const Counter = (props: Props): any => (
   <div>
     <p style={{ color: props.color }}>{props.value}</p>
     <button onClick={props.onIncreaseClick}>增加</button>
