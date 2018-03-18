@@ -162,7 +162,6 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
       </div>
     );
   }
-
 }
 
 // 属性(props) 验证
@@ -173,6 +172,5 @@ HelloBase.propTypes = { // 如果是引用压缩的react.min.js文件，则不�
 
 // 属性(props)默认值
 HelloBase.defaultProps = {
-  prop1: 0,
   prop2: 'I am prop2',
 };
