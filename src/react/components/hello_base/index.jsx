@@ -7,6 +7,16 @@ import style from './style.scss';
 
 console.dir(style);
 
+// React v16.0 开始支持返回 数组、字符串、布尔值、null、常规组件、Portal组件
+const ArrayComp = () => (
+  [
+    // Don't forget the keys :)
+    <li key="A">First item</li>,
+    <li key="B">Second item</li>,
+    <li key="C">Third item</li>,
+  ]
+);
+
 @ppHOC
 export default class HelloBase extends React.Component { // TODO: 待整理React.PureComponent
   constructor(props) {
@@ -159,6 +169,15 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
         <div>
           <input type="button" value="reset button" onClick={this.reset} />
         </div>
+
+        <ul>
+          <ArrayComp />
+        </ul>
+
+        <div>
+          <input type="button" value="suspense button" onClick={this.suspenseTest} />
+        </div>
+
       </div>
     );
   }
