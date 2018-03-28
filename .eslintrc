@@ -29,7 +29,8 @@
         "jsx-a11y/click-events-have-key-events": [0],
         "react/jsx-filename-extension": [0],
         "react/no-unused-state": [1],
-        "react/no-redundant-should-component-update": [0]
+        "react/no-redundant-should-component-update": [0],
+        "class-methods-use-this": [0]
     },
     "globals": {
         "axios": true

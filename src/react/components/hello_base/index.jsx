@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ppHOC from './hoc';
+import Modal from './modal';
 
 import style from './style.scss';
 
@@ -29,11 +30,15 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
     this.state = { // 设置组件初始状态(state)
       key1: 'value1',
       key2: true,
+      error: false,
+      showModal: false,
     };
 
     this.handleClick = this.handleClick.bind(this); // 事件处理绑定上下文
     this.updateState = this.updateState.bind(this);
     this.reset = this.reset.bind(this);
+    this.errorTest = this.errorTest.bind(this);
+    this.portalTest = this.portalTest.bind(this);
   }
 
   // 生命周期
@@ -48,6 +53,14 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
   shouldComponentUpdate(nextProps, nextState) { // 当组件属性(props)或组件状态(state)发生更新时，可以自定义判断是否重新渲染组件
     if (this.state.key1 !== nextState.key1) {
       return true; // state.key1 发生变化时，要进行重新渲染组件
+    }
+
+    if (nextState.error) {
+      return true;
+    }
+
+    if (this.state.showModal !== nextState.showModal) {
+      return true;
     }
 
     return false; // 其他情况则不重新渲染组件
@@ -97,6 +110,18 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
     this.forceUpdate(); // 强制重新渲染组件
   }
 
+  errorTest() {
+    this.setState({
+      error: true,
+    });
+  }
+
+  portalTest() {
+    this.setState({
+      showModal: !this.state.showModal,
+    });
+  }
+
   // 组件渲染
   render() {
     // 内联样式
@@ -104,6 +129,10 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
       fontStyle: 'italic',
       color: 'red',
     };
+
+    if (this.state.error) {
+      throw new Error('YOLO');
+    }
 
     // JSX
     return (
@@ -175,8 +204,20 @@ export default class HelloBase extends React.Component { // TODO: 待整理React
         </ul>
 
         <div>
-          <input type="button" value="suspense button" onClick={this.suspenseTest} />
+          <input type="button" value="error button" onClick={this.errorTest} />
         </div>
+
+        <div>
+          <input type="button" value="portal button" onClick={this.portalTest} />
+        </div>
+
+        {
+          (this.state.showModal) ?
+            <Modal>
+              <div>this is a modal</div>
+            </Modal>
+          : null
+        }
 
       </div>
     );
